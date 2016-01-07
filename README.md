@@ -3,7 +3,7 @@ Welcome to the GIT repository for the code samples included in the book. The cod
 
 **Angular 2 Essentials** (ISBN 139781785882074) is your quick, no-nonsense guide to everything you need to know about how to start building real-world apps with Angular 2
 
-<a href="https://www.packtpub.com/web-development/angular-2-essentials" target="_blank" style="display: block; float:right; margin: 0 0 2em 2em;">				<img src="//dz13w8afd47il.cloudfront.net/sites/default/files/imagecache/ppv4_main_book_cover/B05075_MockupCover_Normal.jpg" class="bookimage">
+<a href="https://www.packtpub.com/web-development/angular-2-essentials" target="_blank" style="display: block; float:right; margin: 0 0 2em 2em;">				![b05075_mockupcover_normal](https://cloud.githubusercontent.com/assets/1104146/12182994/3dabeeb8-b58c-11e5-87f9-12ac3cdfdeec.png)
 </a>
 
 ## About this book
