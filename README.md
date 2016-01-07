@@ -1,9 +1,7 @@
 # Angular 2 Essentials
 Welcome to the GIT repository for the code samples included in the book. The code samples included in this repository are in Alpha and therefore are subject to change without prior notice. The author provides this examples "AS IS" while the book production is still in progress.
 
-**Angular 2 Essentials** (ISBN 139781785882074) is your quick, no-nonsense guide to everything you need to know about how to start building real-world apps with Angular 2
-
-<a href="https://www.packtpub.com/web-development/angular-2-essentials" target="_blank" style="display: block; float:right; margin: 0 0 2em 2em;">				![b05075_mockupcover_normal](https://cloud.githubusercontent.com/assets/1104146/12182994/3dabeeb8-b58c-11e5-87f9-12ac3cdfdeec.png)
+<a href="https://www.packtpub.com/web-development/angular-2-essentials" target="_blank" style="display: block; text-align: center;">				![b05075_mockupcover_normal](https://cloud.githubusercontent.com/assets/1104146/12182994/3dabeeb8-b58c-11e5-87f9-12ac3cdfdeec.png)
 </a>
 
 ## About this book
@@ -17,6 +15,10 @@ The author has done all the hard work of fitting everything Angular 2 means for 
 This book is targeted at web developers who want to build the next generation of state-of-the-art mobile and desktop web applications with Angular 2. This book does not require you to have prior exposure to either Angular 1.x or 2, although comprehensive knowledge of Javascript is assumed.
 
 ## Troubleshooting the code samples
+
+At this time these are the code samples published so far:
+
+* [Chapter 1](/tree/master/chapter_01)
 
 While the book is still in Alpha state and the Angular 2 project keeps moving forward, breaking changes in the codebase may affect the reliability of the code examples provided.
 

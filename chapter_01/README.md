@@ -1,6 +1,6 @@
-# Chapter 1: Creating our first component in Angular 2
+# 1: Creating our first component in Angular 2
 
-**Warning:** Our *Angular 2 Essentials* book, encompassing the code examples available here, is still in Alpha state and therefore the samples provided herein may be subject to change without prior notice. 
+**Warning:** Our *Angular 2 Essentials* book, encompassing the code examples available here, is still in Alpha state and therefore the samples provided herein may be subject to change without prior notice.
 
 ## Description
 
