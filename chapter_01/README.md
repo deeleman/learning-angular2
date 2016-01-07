@@ -1,16 +1,28 @@
-# 1: Creating our first component in Angular 2
+# Chapter 1
+## Creating our first component in Angular 2
 
 **Warning:** Our *Angular 2 Essentials* book, encompassing the code examples available here, is still in Alpha state and therefore the samples provided herein may be subject to change without prior notice.
+
+## Installation
+
+Clone the repository, move to the folder containing the source file for this chapter and install the NPM dependencies by executing the following:
+
+```javascript
+$ git clone https://github.com/deeleman/angular2-essentials.git
+$ cd angular2-essentials/chapter_01
+$ npm install
+```
+You will need TypeScript to be available globally to proceed. Please refer to the book for further instructions.
 
 ## Description
 
 We kickstart our journey into Angular by building our very first component, which is the bread and butter of all Angular 2 applications. Angular 2 components conform the bricks of all web applications and by the end of this chapter we will have a fully functional web widget harnessing the power of Angular.
 
-## Topics covered
+### Topics covered
 
 This chapter exposes the user to the code paradigm of Angular components, based on ES6 classes decorated with annotations. Prior to that we will guide the user through the vast ocean of tooling available for working on TypeScript-baed projects.
 
-## Skills learned
+### Skills learned
 
 * How to setup a workspace with support for Angular 2 and TypeScript.
 * Leverage automated build tools like Gulp to help accomplish the above.
