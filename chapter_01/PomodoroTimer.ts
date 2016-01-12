@@ -2,13 +2,13 @@ import { Component } from 'angular2/core';
 import { bootstrap } from 'angular2/platform/browser';
 
 @Component({
-    selector: 'app',
+    selector: 'pomodoro-timer',
     template: `
         <h1> {{ minutes }}:{{ seconds  | number: '2.0' }} </h1>
         <p><button (click)="togglePause()" class="btn btn-danger"> {{ buttonLabel }} </button></p>
     `
 })
-class Pomodoro {
+class PomodoroTimer {
     minutes: number;
     seconds: number;
     isPaused: boolean;
@@ -47,4 +47,4 @@ class Pomodoro {
     }
 }
 
-bootstrap(Pomodoro, []);
+bootstrap(PomodoroTimer, []);

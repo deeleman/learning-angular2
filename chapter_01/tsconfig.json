@@ -16,7 +16,7 @@
     "compileOnSave": false,
     "buildOnSave": false,
     "files": [
-        "app.ts"
+        "PomodoroTimer.ts"
     ],
     "atom": {
         "rewriteTsconfig": true
