@@ -20,6 +20,7 @@ At this time these are the code samples published so far:
 
 * [Chapter 1 - Creating our first component in Angular 2](https://github.com/deeleman/angular2-essentials/tree/master/chapter_01)
 * [Chapter 2 - Introducing TypeScript](https://github.com/deeleman/angular2-essentials/tree/master/chapter_02)
+* [Chapter 3 - Enriching our component layout and interactivity](https://github.com/deeleman/angular2-essentials/tree/master/chapter_03)
 
 While the book is still in Alpha state and the Angular 2 project keeps moving forward, breaking changes in the codebase may affect the reliability of the code examples provided.
 
