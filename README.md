@@ -21,6 +21,12 @@ At this time these are the code samples published so far:
 * [Chapter 1 - Creating our first component in Angular 2](https://github.com/deeleman/angular2-essentials/tree/master/chapter_01)
 * [Chapter 2 - Introducing TypeScript](https://github.com/deeleman/angular2-essentials/tree/master/chapter_02)
 * [Chapter 3 - Enriching our component layout and interactivity](https://github.com/deeleman/angular2-essentials/tree/master/chapter_03)
+* Chapter 4 - Building an application architecture with Angular 2 (coming soon)
+* Chapter 5 - Connecting our application to a data service (coming soon)
+* Chapter 6 - Implementing routing in our application (coming soon)
+* [Chapter 7 - Forms and Authentication handling in Angular 2](https://github.com/deeleman/angular2-essentials/tree/master/chapter_07)
+* Chapter 8 - CSS animation with Angular 2  (coming soon)
+* Chapter 9 - Testing Angular 2 applications  (coming soon)
 
 While the book is still in Alpha state and the Angular 2 project keeps moving forward, breaking changes in the codebase may affect the reliability of the code examples provided.
 
