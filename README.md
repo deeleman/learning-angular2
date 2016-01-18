@@ -1,7 +1,7 @@
 # Angular 2 Essentials
 Welcome to the GIT repository for the code samples included in the book. The code samples included in this repository are in Alpha and therefore are subject to change without prior notice. The author provides this examples "AS IS" while the book production is still in progress.
 
-<a href="https://www.packtpub.com/web-development/angular-2-essentials" target="_blank" style="display: block; text-align: center;">				![b05075_mockupcover_normal](https://cloud.githubusercontent.com/assets/1104146/12182994/3dabeeb8-b58c-11e5-87f9-12ac3cdfdeec.png)
+<a href="https://www.packtpub.com/web-development/angular-2-essentials" target="_blank" style="display: block; text-align: center;">				![b05075_mockupcover_normal_1](https://cloud.githubusercontent.com/assets/1104146/12381697/a247d9f8-bd8f-11e5-80d2-63f94891e2f1.jpg)
 </a>
 
 ## About this book
