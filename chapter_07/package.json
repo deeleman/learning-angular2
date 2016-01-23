@@ -4,7 +4,7 @@
   "description": "Chapter 7 - Forms and Authentication handling in Angular 2",
   "main": "bootstrap.js",
   "keywords": [],
-  "author": "",
+  "author": "Pablo Deeleman",
   "license": "ISC",
   "dependencies": {
     "angular2": "^2.0.0-beta.0",

@@ -1,10 +1,10 @@
 {
   "name": "chapter04",
   "version": "1.0.0",
-  "description": "Chapter 4 - Building an application architecture with Angular 2",
+  "description": "Chapter 4 - Building an application with Angular 2 components",
   "main": "bootstrap.js",
   "keywords": [],
-  "author": "",
+  "author": "Pablo Deeleman",
   "license": "ISC",
   "dependencies": {
       "angular2": "^2.0.0-beta.0",

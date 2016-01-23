@@ -1,10 +1,10 @@
 {
   "name": "chapter06",
   "version": "1.0.0",
-  "description": "Chapter 6 - Implementing routing in our application",
+  "description": "Chapter 6 - Routing in Angular 2",
   "main": "bootstrap.js",
   "keywords": [],
-  "author": "",
+  "author": "Pablo Deeleman",
   "license": "ISC",
   "dependencies": {
       "angular2": "^2.0.0-beta.0",
