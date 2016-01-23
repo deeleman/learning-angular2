@@ -1,12 +1,8 @@
 {
   "name": "chapter05",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "tsc": "tsc -p src -w",
-    "start": "serve"
-  },
+  "description": "Chapter 5 - Connecting our application to a data service",
+  "main": "bootstrap.js",
   "keywords": [],
   "author": "",
   "license": "ISC",
