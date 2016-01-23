@@ -10,7 +10,6 @@ import SecureRouterOutlet from '../directives/SecureRouterOutlet';
 @Component({
     selector: 'pomodoro-app',
     directives: [ROUTER_DIRECTIVES, SecureRouterOutlet],
-    encapsulation: ViewEncapsulation.Emulated,
     styles: [`
         .router-link-active {
             font-weight: bold;
@@ -21,14 +20,12 @@ import SecureRouterOutlet from '../directives/SecureRouterOutlet';
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
-                    <span class="navbar-brand">My Pomodoro App</span>
+                    <strong class="navbar-brand">My Pomodoro App</strong>
                 </div>
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav navbar-right">
                     <li><a [routerLink]="['TaskList']">Tasks</a></li>
                     <li *ngIf="userIsLogged"><a [routerLink]="['EditTask']">Publish Task</a></li>
                     <li><a [routerLink]="['Timer']">Standalone Timer</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
                     <li *ngIf="!userIsLogged"><a [routerLink]="['Login']">Login</a></li>
                     <li *ngIf="userIsLogged"><a (click)="logout()">Logout</a></li>
                 </ul>

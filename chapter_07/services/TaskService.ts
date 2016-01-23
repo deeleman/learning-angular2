@@ -17,7 +17,7 @@ export default class TaskService {
     loadTasks(): void {
         this.http.get('/services/tasks.json')
             .map(response => response.json())
-            .map(stream => stream.map(x => new TaskModel(x.name, x.deadline, x.timeRequired)))
+            .map(stream => stream.map(res => new TaskModel(res.name, res.deadline, res.timeRequired)))
             .subscribe(
                 taskModels => {
                     this.taskStore = taskModels;

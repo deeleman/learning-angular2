@@ -41,7 +41,6 @@ You may reach out Pablo Deeleman at:
 * [Linkedin](https://linkedin.com/in/pablodeeleman)
 * [Twitter](https://twitter.com/pablodeeleman)
 * [UIUX.es](http://uiux.es/)
-* Aaaand... sorry, I have no Facebook. ;)
 
 ### Thanks for purchasing the book!
 

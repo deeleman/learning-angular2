@@ -37,8 +37,8 @@ export default class PomodoroTaskList implements OnInit {
 
     renderPomodoros() {
         this.queuedPomodoros = this.tasks
-        .filter((taskModel: TaskModel) => taskModel.queued)
-        .reduce((pomodoros: number, queuedTask: TaskModel) => pomodoros + queuedTask.pomodorosRequired, 0);
+            .filter((taskModel: TaskModel) => taskModel.queued)
+            .reduce((pomodoros: number, queuedTask: TaskModel) => pomodoros + queuedTask.pomodorosRequired, 0);
     }
 
     workOn(index: number): void {

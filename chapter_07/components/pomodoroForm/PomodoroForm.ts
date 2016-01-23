@@ -1,4 +1,4 @@
-import { Component, OnInit, Injector } from 'angular2/core';
+import { Component } from 'angular2/core';
 import { Title } from 'angular2/platform/browser';
 import { Router, ROUTER_DIRECTIVES, ComponentInstruction, CanActivate, OnActivate, CanDeactivate, OnDeactivate } from 'angular2/router';
 import { TaskModel } from '../../models/models';
