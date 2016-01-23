@@ -1,12 +1,8 @@
 {
   "name": "chapter06",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "tsc": "tsc -p src -w",
-    "start": "serve"
-  },
+  "description": "Chapter 7 - Forms and Authentication handling in Angular 2",
+  "main": "bootstrap.js",
   "keywords": [],
   "author": "",
   "license": "ISC",
