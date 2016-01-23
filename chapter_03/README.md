@@ -12,7 +12,7 @@ $ git clone https://github.com/deeleman/angular2-essentials.git
 $ cd angular2-essentials/chapter_03
 $ npm install
 ```
-A TypeScript project settings file has been made available to ease the project files transpilation into ECMAScript 5.  If you don't have the TypeScript compiler installed, you can [get it here](http://www.typescriptlang.org/). Once installed, you can compile the project by simply executing the `tsc`command in your console. Please refer to the chapter 1 of the book for further instructions.
+A TypeScript project settings file has been made available to ease the project files transpilation into ECMAScript 5.  If you don't have the TypeScript compiler installed, you can [get it here](http://www.typescriptlang.org/). Once installed, you can compile the project by simply executing the `tsc`command in your console. Please refer to chapter 1 in the book for further instructions.
 
 ## Description
 
