@@ -1,12 +1,8 @@
 {
   "name": "chapter06",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "tsc": "tsc -p src -w",
-    "start": "serve"
-  },
+  "description": "Chapter 6 - Implementing routing in our application",
+  "main": "bootstrap.js",
   "keywords": [],
   "author": "",
   "license": "ISC",
