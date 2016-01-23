@@ -34,9 +34,9 @@ class DataStore {
 /// Custom Pipes ******
 
 @Pipe({
-    name: 'time'
+    name: 'formattedTime'
 })
-class ConvertToHoursMinutes {
+class FormattedTimePipe {
     transform(totalMinutes: number): string {
         let minutes: number = totalMinutes % 60;
         let hours: number = Math.floor(totalMinutes / 60);
@@ -48,21 +48,21 @@ class ConvertToHoursMinutes {
     name: 'queued',
     pure: false
 })
-class Queued {
-    transform(tasks: any[], args?: any[]): Task[] {
-        return tasks.filter((x: any) => x.queued === args[0]);
+class QueuedPipe {
+    transform(taskModels: any[], args?: any[]): TaskModel[] {
+        return taskModels.filter((taskModel: TaskModel) => taskModel.queued === args[0]);
     }
 }
 
 /// Custom Directives ******
 
 @Directive({
-    selector: '[reduceTo]'
+    selector: '[resizeTo]'
 })
-class ReduceTo {
-    @Input() reduceTo: number;
-    @HostBinding('style.width.px') get width (): number {
-        return this.reduceTo;
+class ResizeTo {
+    @Input() resizeTo: number;
+    @HostBinding('style.width.px') get width(): number {
+        return this.resizeTo;
     };
 }
 
@@ -88,7 +88,7 @@ class Multiply {
 
 /// Model class ******
 
-class Task {
+class TaskModel {
     name: string;
     deadline: Date;
     queued: boolean;
@@ -108,7 +108,7 @@ class Task {
 
 @Component({
     selector: 'pomodoro-icon',
-    directives: [ReduceTo],
+    directives: [ResizeTo],
     templateUrl: 'views/pomodoroIcon.html'
 })
 class PomodoroIcon {}
@@ -118,27 +118,31 @@ class PomodoroIcon {}
 @Component({
     selector: 'pomodoro-tasks',
     directives: [PomodoroIcon, Multiply],
-    pipes: [ConvertToHoursMinutes, Queued],
+    pipes: [FormattedTimePipe, QueuedPipe],
     encapsulation: ViewEncapsulation.Emulated,
     styleUrls: ['styles/pomodoroTasks.css'],
     templateUrl: 'views/pomodoroTasks.html'
 })
 class PomodoroTasks {
     today: Date;
-    tasks: Task[];
+    tasks: TaskModel[];
     queuedPomodoros: number;
 
     constructor() {
         const dataStore: DataStore = new DataStore();
-        this.tasks = dataStore.items.map((x: any) => new Task(x.name, x.deadline, x.timeRequired));
+        this.tasks = dataStore.items.map((object: any) => new TaskModel(object.name, object.deadline, object.timeRequired));
         this.today = new Date();
     }
 
-    toggleTask(task: Task): void {
-        task.queued = !task.queued;
+    renderPomodoros() {
         this.queuedPomodoros = this.tasks
-            .filter((x: Task) => x.queued)
-            .reduce((pomodoros: number, queuedTask: Task) => pomodoros + queuedTask.pomodorosRequired, 0);
+            .filter((taskModel: TaskModel) => taskModel.queued)
+            .reduce((pomodoros: number, queuedTask: TaskModel) => pomodoros + queuedTask.pomodorosRequired, 0);
+    }
+
+    toggleTask(task: TaskModel): void {
+        task.queued = !task.queued;
+        this.renderPomodoros();
     }
 };
 

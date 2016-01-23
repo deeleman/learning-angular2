@@ -2,7 +2,7 @@
     <article *ngIf="queuedPomodoros > 0">
         <h3>
             {{ queuedPomodoros }} Pomodoros for today
-            <span class="small">(Estimated time: {{ queuedPomodoros*25 | time }})</span>
+            <span class="small">(Estimated time: {{ queuedPomodoros*25 | formattedTime }})</span>
         </h3>
         <p>
             <span *ngFor="#queuedTask of tasks | queued: true ">

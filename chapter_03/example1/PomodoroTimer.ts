@@ -9,7 +9,7 @@ import { bootstrap } from 'angular2/platform/browser';
 })
 class Countdown {
     @Input() seconds: number;
-    intervalId: any; // The TypeScript compiler may complain when the intervalId is type as number
+    intervalId: any; // The TypeScript compiler complains when the intervalId is typed as number
     onComplete: EventEmitter<any> = new EventEmitter();
     secondsChanged: EventEmitter<number> = new EventEmitter();
 
@@ -20,9 +20,9 @@ class Countdown {
     countDownSeconds(): void {
         if (--this.seconds < 1) {
             clearTimeout(this.intervalId);
-            this.onComplete.next(null);
+            this.onComplete.emit(null);
         }
-        this.secondsChanged.next(this.seconds);
+        this.secondsChanged.emit(this.seconds);
     }
 }
 
@@ -31,9 +31,12 @@ class Countdown {
     directives: [Countdown],
     encapsulation: ViewEncapsulation.None,
     template: `<countdown [seconds]="timeout" #timer
-                               (seconds)="timeout = $event"
-                               (countdownComplete)="onCountdownCompleted()"></countdown>
-               <p (click)="timer.seconds = 50">Only <strong>{{timeout}} seconds</strong> left. Click me to reset countdown to 50 seconds.</p>`
+                          (seconds)="timeout = $event"
+                          (countdownComplete)="onCountdownCompleted()">
+               </countdown>
+               <p (click)="timer.seconds = 50">
+                    Only <strong>{{timeout}} seconds</strong> left. Click me to reset countdown to 50 seconds.
+               </p>`
 })
 class PomodoroTimer {
     timeout: number = 10;
