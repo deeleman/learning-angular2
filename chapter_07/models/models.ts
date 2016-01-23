@@ -1,5 +1,5 @@
 import IQueueable from './IQueueable';
-import Task from './Task';
-import TaskIcon from './TaskIcon';
+import TaskModel from './TaskModel';
+import TaskIconModel from './TaskIconModel';
 
-export { IQueueable, Task, TaskIcon };
+export { IQueueable, TaskModel, TaskIconModel };

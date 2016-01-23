@@ -1,11 +1,11 @@
 import { Directive, HostBinding, Input } from 'angular2/core';
 
 @Directive({
-    selector: '[reduceTo]'
+    selector: '[resizeTo]'
 })
 export default class ReduceTo {
-    @Input() reduceTo: number;
+    @Input() resizeTo: number;
     @HostBinding('style.width.px') get width (): number {
-        return this.reduceTo;
+        return this.resizeTo;
     };
 }

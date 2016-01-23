@@ -1,17 +1,19 @@
-import Localization from './Localization';
-import PomodoroConfig from './PomodoroConfig';
+import LocalizationService from './LocalizationService';
+import SettingsService from './SettingsService';
 import TaskService from './TaskService';
 import AuthService from './AuthService';
 
 const POMODORO_PROVIDERS: any[] = [
-    Localization,
-    PomodoroConfig,
+    LocalizationService,
+    SettingsService,
     TaskService,
-    AuthService];
+    AuthService
+];
 
 export {
     POMODORO_PROVIDERS,
-    Localization,
-    PomodoroConfig,
+    LocalizationService,
+    SettingsService,
     TaskService,
-    AuthService };
+    AuthService
+};

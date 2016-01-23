@@ -1,4 +1,4 @@
-import ConvertToHoursMinutes from './ConvertToHoursMinutes';
-import Queued from './Queued';
+import FormattedTimePipe from './FormattedTimePipe';
+import QueuedPipe from './QueuedPipe';
 
-export { ConvertToHoursMinutes, Queued };
+export { FormattedTimePipe, QueuedPipe };

@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from 'angular2/core';
 import { RouteParams, CanReuse, OnReuse } from 'angular2/router';
-import PomodoroConfig from '../../services/PomodoroConfig';
-import { TaskService } from '../../services/services';
+import { TaskService, SettingsService } from '../../services/services';
 
 @Component({
     selector: 'pomodoro-timer',
@@ -22,7 +21,7 @@ export default class PomodoroTimer implements OnInit, CanReuse, OnReuse {
     taskName: string;
 
     constructor(
-        private pomodoroConfig: PomodoroConfig,
+        private settingsService: SettingsService,
         private routeParams: RouteParams,
         private taskService: TaskService) {}
 
@@ -42,14 +41,14 @@ export default class PomodoroTimer implements OnInit, CanReuse, OnReuse {
 
     resetPomodoro(): void {
         this.isPaused = true;
-        this.minutes = this.pomodoroConfig.minutes - 1;
+        this.minutes = this.settingsService.minutes - 1;
         this.seconds = 59;
-        this.buttonLabel = this.pomodoroConfig.labels['start'];
+        this.buttonLabel = this.settingsService.labels['start'];
     }
 
     countDown(): void {
         if (!this.isPaused) {
-            this.buttonLabel = this.pomodoroConfig.labels['pause'];
+            this.buttonLabel = this.settingsService.labels['pause'];
 
             if (--this.seconds < 0) {
                 this.seconds = 59;
@@ -62,8 +61,8 @@ export default class PomodoroTimer implements OnInit, CanReuse, OnReuse {
 
     togglePause(): void {
         this.isPaused = !this.isPaused;
-        if (this.minutes < this.pomodoroConfig.minutes || this.seconds < 59) { // countdown has started
-            this.buttonLabel = this.isPaused ? this.pomodoroConfig.labels['resume'] : this.pomodoroConfig.labels['pause'];
+        if (this.minutes < this.settingsService.minutes || this.seconds < 59) { // countdown has started
+            this.buttonLabel = this.isPaused ? this.settingsService.labels['resume'] : this.settingsService.labels['pause'];
         }
     }
 

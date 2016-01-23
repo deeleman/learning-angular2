@@ -17,7 +17,7 @@ export default class PomodoroLogin {
         private router: Router,
         private authService: AuthService) {
             this.loginForm = formBuilder.group({
-                username: ['', Validators.compose([Validators.required, this.validateUsername])],
+                username: ['', Validators.compose([Validators.required, this.usernameValidator])],
                 password: ['', Validators.required]
             });
 
@@ -28,7 +28,7 @@ export default class PomodoroLogin {
 
         }
 
-    private validateUsername(control: Control): {[key: string]: boolean} {
+    private usernameValidator(control: Control): {[key: string]: boolean} {
         if(!/(.+)@(.+){2,}\.(.+){2,}/.test(control.value)) {
             return {
                 'emailNotValid': true

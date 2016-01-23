@@ -5,11 +5,11 @@ import { HTTP_PROVIDERS } from 'angular2/http';
 import { ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy } from 'angular2/router';
 import { FORM_PROVIDERS } from 'angular2/common';
 import { POMODORO_PROVIDERS } from './services/services';
-import App from './components/app';
+import PomodoroApp from './components/PomodoroApp';
 
 enableProdMode();
 
-bootstrap(App, [
+bootstrap(PomodoroApp, [
     HTTP_PROVIDERS,
     ROUTER_PROVIDERS,
     FORM_PROVIDERS,

@@ -1,4 +1,4 @@
-export default class Localization {
+export default class LocalizationService {
     private labels: Object;
 
     constructor() {

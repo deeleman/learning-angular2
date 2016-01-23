@@ -1,6 +1,6 @@
 import IQueueable from './IQueueable';
 
-export default class Task implements IQueueable {
+export default class TaskModel implements IQueueable {
     name: string;
     deadline: Date;
     queued: boolean;

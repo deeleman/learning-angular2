@@ -1,4 +1,4 @@
-<form class="container" (submit)="saveTask()" ngNoForm>
+<form class="container" (submit)="saveTask()">
     <h3>Task Editor:</h3>
     <div class="form-group">
         <p class="text-muted" *ngIf="name.untouched">
@@ -13,7 +13,7 @@
         <input type="text"
             class="form-control"
             placeholder="Task name"
-            [(ngModel)]="task.name"
+            [(ngModel)]="taskModel.name"
             #name="ngForm"
             required>
     </div>
@@ -21,7 +21,7 @@
     <div class="form-group">
         <input type="Date"
             class="form-control"
-            [(ngModel)]="task.deadline"
+            [(ngModel)]="taskModel.deadline"
             required>
     </div>
 
@@ -31,7 +31,7 @@
             placeholder="Pomodoros required"
             min="1"
             max="4"
-            [(ngModel)]="task.pomodorosRequired"
+            [(ngModel)]="taskModel.pomodorosRequired"
             required>
     </div>
 

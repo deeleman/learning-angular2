@@ -1,4 +1,4 @@
-import { Component, provide } from 'angular2/core';
+import { Component, ViewEncapsulation } from 'angular2/core';
 import { RouteConfig, ROUTER_DIRECTIVES, Router } from 'angular2/router';
 import PomodoroTaskList from './pomodoroTaskList/PomodoroTaskList';
 import PomodoroTimerRouter from './pomodoroTimer/PomodoroTimerRouter';
@@ -8,14 +8,17 @@ import { AuthService } from '../services/services';
 import SecureRouterOutlet from '../directives/SecureRouterOutlet';
 
 @Component({
-    selector: 'app',
+    selector: 'pomodoro-app',
     directives: [ROUTER_DIRECTIVES, SecureRouterOutlet],
+    encapsulation: ViewEncapsulation.Emulated,
     styles: [`
-        body { padding-top: 60px; }
-        .router-link-active { font-weight: bold; color: white!important; }
+        .router-link-active {
+            font-weight: bold;
+            border-bottom: 2px #999 solid;
+        }
     `],
     template: `
-        <nav class="navbar navbar-inverse navbar-fixed-top">
+        <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
                     <span class="navbar-brand">My Pomodoro App</span>
@@ -42,14 +45,14 @@ import SecureRouterOutlet from '../directives/SecureRouterOutlet';
     { path: '/edit', name: 'EditTask', component: PomodoroForm },
     { path: '/login', name: 'Login', component: PomodoroLogin }
 ])
-export default class App {
+export default class PomodoroApp {
     userIsLogged: boolean;
 
     constructor(
         private authService: AuthService,
         private router: Router) {
-            authService.userLoginStatus.subscribe(loggedIn => {
-                this.userIsLogged = loggedIn;
+            authService.userLoginStatus.subscribe(userIsloggedIn => {
+                this.userIsLogged = userIsloggedIn;
             });
         }
 

@@ -1,12 +1,12 @@
 import { Injectable } from 'angular2/core';
 import { Http, Response } from 'angular2/http';
 import { Observable } from 'rxjs/Observable';
-import { Task } from '../models/models';
+import { TaskModel } from '../models/models';
 
 @Injectable()
 export default class TaskService {
-    tasks: Observable<Array<Task>>;
-    public taskStore: Array<Task> = [];
+    tasks: Observable<Array<TaskModel>>;
+    public taskStore: Array<TaskModel> = [];
     private tasksObserver: any;
 
     constructor(public http: Http) {
@@ -17,18 +17,18 @@ export default class TaskService {
     loadTasks(): void {
         this.http.get('/services/tasks.json')
             .map(response => response.json())
-            .map(stream => stream.map(x => new Task(x.name, x.deadline, x.timeRequired)))
+            .map(stream => stream.map(x => new TaskModel(x.name, x.deadline, x.timeRequired)))
             .subscribe(
-                data => {
-                    this.taskStore = data;
+                taskModels => {
+                    this.taskStore = taskModels;
                     this.tasksObserver.next(this.taskStore);
                 },
                 error => console.log(error)
             );
     }
 
-    addTask(task: Task): void {
-        this.taskStore.push(task);
+    addTask(taskModel: TaskModel): void {
+        this.taskStore.push(taskModel);
         this.tasksObserver.next(this.taskStore);
     }
 }

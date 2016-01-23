@@ -1,7 +1,7 @@
 import { Component, OnInit, Injector } from 'angular2/core';
 import { Title } from 'angular2/platform/browser';
 import { Router, ROUTER_DIRECTIVES, ComponentInstruction, CanActivate, OnActivate, CanDeactivate, OnDeactivate } from 'angular2/router';
-import { Task } from '../../models/models';
+import { TaskModel } from '../../models/models';
 import { TaskService, AuthService } from '../../services/services';
 
 @Component({
@@ -15,21 +15,21 @@ import { TaskService, AuthService } from '../../services/services';
         .ng-untouched { border-color: #999999; }
     `]
 })
-//@CanActivate(AuthService.grantAccess)
+//@CanActivate(AuthService.grantAccess) // @Note: Refer to book for details on commented code
 export default class PomodoroForm implements OnActivate, CanDeactivate, OnDeactivate {
-    task: Task;
+    taskModel: TaskModel;
     changesSaved: boolean;
 
     constructor(
         private title: Title,
         private router: Router,
         private taskService: TaskService) {
-            this.task = new Task();
+            this.taskModel = new TaskModel();
     }
 
     saveTask() {
-        this.task.deadline = new Date(this.task.deadline.toString());
-        this.taskService.addTask(this.task);
+        this.taskModel.deadline = new Date(this.taskModel.deadline.toString());
+        this.taskService.addTask(this.taskModel);
         this.changesSaved = true;
         this.router.navigate(['TaskList']);
     }
@@ -39,6 +39,7 @@ export default class PomodoroForm implements OnActivate, CanDeactivate, OnDeacti
     }
 
     routerCanDeactivate(next: ComponentInstruction, prev: ComponentInstruction) {
+        // @Note: Refer to book for details on commented code
         //return this.changesSaved || confirm('Are you sure you want to leave?');
         return !AuthService.grantAccess() || this.changesSaved || confirm('Are you sure you want to leave?');
     }
