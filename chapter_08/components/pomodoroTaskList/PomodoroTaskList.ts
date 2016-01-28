@@ -4,10 +4,11 @@ import { FormattedTimePipe, QueuedPipe } from '../../pipes/pipes';
 import { TaskModel } from '../../models/models';
 import { TaskService, SettingsService } from '../../services/services';
 import PomodoroIcon from '../PomodoroIcon/PomodoroIcon';
+import Highlight from '../../directives/Highlight';
 
 @Component({
     selector: 'pomodoro-task-list',
-    directives: [PomodoroIcon],
+    directives: [PomodoroIcon, Highlight],
     pipes: [FormattedTimePipe, QueuedPipe],
     encapsulation: ViewEncapsulation.Emulated,
     styleUrls: ['components/pomodoroTaskList/styles.css'],

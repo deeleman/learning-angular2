@@ -17,3 +17,7 @@ h3, p {
 .ng-enter-active {
     opacity: 1;
 }
+
+.highlight-row {
+    background-color: #fff5a0;
+}
