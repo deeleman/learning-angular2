@@ -25,7 +25,7 @@ At this time these are the code samples published so far:
 * [Chapter 5 - Asynchronous data services with Angular 2](https://github.com/deeleman/angular2-essentials/tree/master/chapter_05)
 * [Chapter 6 - Routing in Angular 2](https://github.com/deeleman/angular2-essentials/tree/master/chapter_06)
 * [Chapter 7 - Forms and Authentication handling in Angular 2](https://github.com/deeleman/angular2-essentials/tree/master/chapter_07)
-* Chapter 8 - Animating components with Angular 2 (coming soon)
+* [Chapter 8 - Animating components with Angular 2](https://github.com/deeleman/angular2-essentials/tree/master/chapter_08)
 * Chapter 9 - Unit Testing with Angular 2 (coming soon)
 
 While the book is still in Alpha state and the Angular 2 project keeps moving forward, breaking changes in the codebase may affect the reliability of the code examples provided.
