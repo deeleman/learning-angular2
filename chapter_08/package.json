@@ -1,7 +1,7 @@
 {
   "name": "chapter08",
   "version": "1.0.0",
-  "description": "Chapter 8 - Animations in Angular 2",
+  "description": "Chapter 8 - Animating components in Angular 2",
   "main": "bootstrap.js",
   "keywords": [],
   "author": "Pablo Deeleman",

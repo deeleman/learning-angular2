@@ -1,5 +1,5 @@
 # Chapter 8
-## Animations in Angular 2
+## Animating components in Angular 2
 
 **Warning:** Our *Angular 2 Essentials* book, encompassing the code examples available here, is still in Alpha state and therefore the samples provided herein may be subject to change without prior notice.
 
