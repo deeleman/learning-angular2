@@ -15,10 +15,17 @@ $ cd angular2-essentials/chapter_03
 
 # From this point choose either ./example1 or ./example2. eg:
 
-$ cd example1 
+$ cd example1
 $ npm install
 ```
-A TypeScript project settings file has been made available to ease the project files transpilation into ECMAScript 5.  If you don't have the TypeScript compiler installed, you can [get it here](http://www.typescriptlang.org/). Once installed, you can compile the project by simply executing the `tsc`command in your console. Please refer to chapter 1 in the book for further instructions.
+A TypeScript project settings file ([tsconfig.json](./tsconfig.json)) has been made available on each example folder in order to ease the project files transpilation into ECMAScript 5.  If you don't have the TypeScript compiler installed, you can [get it here](http://www.typescriptlang.org/). **Warning:** At the time of this writing, the TypeScript compiler on its 1.8 version will complain when transpiling Angular code implementing async interfaces based on Promises. Please use version 1.7.5 or earlier. Once installed, you can compile the project by simply executing the `tsc` command in your console. Please refer to chapter 1 in the book for further instructions, or execute the following in your terminal window after moving the prompt to the chapter's example folder of you choice:
+
+```bash
+$ npm i -g typescript@1.7.5
+$ tsc
+```
+
+**Please note:** You will require a local server pointing to the example folder you want to check in order to execute the example contained therein.
 
 ## Description
 

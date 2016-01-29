@@ -14,7 +14,7 @@ The author has done all the hard work of fitting everything Angular 2 means for 
 
 This book is targeted at web developers who want to build the next generation of state-of-the-art mobile and desktop web applications with Angular 2. This book does not require you to have prior exposure to either Angular 1.x or 2, although comprehensive knowledge of Javascript is assumed.
 
-## Troubleshooting the code samples
+## Executing the code samples
 
 At this time these are the code samples published so far:
 
@@ -27,6 +27,14 @@ At this time these are the code samples published so far:
 * [Chapter 7 - Forms and Authentication handling in Angular 2](https://github.com/deeleman/angular2-essentials/tree/master/chapter_07)
 * [Chapter 8 - Animating components with Angular 2](https://github.com/deeleman/angular2-essentials/tree/master/chapter_08)
 * Chapter 9 - Unit Testing with Angular 2 (coming soon)
+
+### What do you need to run the examples?
+
+Each chapter folder contains a standalone project which is in fact the incremental iteration of the Pomodoro application that we will build through the learning journey proposed in the book. You will want to follow the deployment guidelines included at the README file available on each chapter folder.
+
+You will want to install a local server properly configured to point to the example folder you want to check. We recommend using the excellent [lite-server](https://www.npmjs.com/package/lite-server) package by John Papa. 
+
+### Disclaimer
 
 While the book is still in Alpha state and the Angular 2 project keeps moving forward, breaking changes in the codebase may affect the reliability of the code examples provided.
 
