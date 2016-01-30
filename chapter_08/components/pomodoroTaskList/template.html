@@ -23,7 +23,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="#task of tasks; #i = index" highlight="highlight-row" #row="highlight" (click)="row.animate()">
+            <tr *ngFor="#task of tasks; #i = index" class="ng-animate" highlight="highlight-row" #row="highlight" (click)="row.animate()">
                 <th scope="row">{{i}} <span *ngIf="task.queued" class="label label-info ng-animate">Queued</span></th>
                 <td>{{task.name | slice: 0:35 }}<span [hidden]="task.name.length < 35">...</span></td>
                 <td>{{task.deadline | date: 'fullDate' }}
@@ -42,7 +42,7 @@
                         <i class="glyphicon glyphicon-plus-sign"></i> Add
                         </template>
                     </button>
-                    <button type="button" class="btn btn-default btn-xs ng-animate" *ngIf="task.queued" (click)="workOn(i)">
+                    <button type="button" class="btn btn-default btn-xs" *ngIf="task.queued" (click)="workOn(i)">
                         <i class="glyphicon glyphicon-expand"></i> Start
                     </button>
                 </td>
