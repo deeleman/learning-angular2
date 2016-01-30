@@ -1,18 +1,4 @@
-/* Inspired by Nick Pettit - https://github.com/nickpettit/glide */
-
-@-webkit-keyframes pulse {
-  from {
-    transform: scale3d(1, 1, 1);
-  }
-
-  50% {
-    transform: scale3d(1.1, 1.1, 1.1);
-  }
-
-  to {
-    transform: scale3d(1, 1, 1);
-  }
-}
+/* Inspired by Animate.css - https://daneden.github.io/animate.css/ */
 
 @keyframes pulse {
   from {
