@@ -1,5 +1,5 @@
 # Angular 2 Essentials
-Welcome to the GIT repository for the code samples included in the book. The code samples included in this repository are in Alpha and therefore are subject to change without prior notice. The author provides this examples "AS IS" while the book production is still in progress.
+Welcome to the GIT repository for the code samples included in the book. The code samples included in this repository belong to a book still under development and therefore are subject to change without prior notice. The author will provide these examples "AS IS" while the book production remains in progress.
 
 <a href="https://www.packtpub.com/web-development/angular-2-essentials" target="_blank" style="display: block; text-align: center;">				![b05075_mockupcover_normal_1](https://cloud.githubusercontent.com/assets/1104146/12381718/f902dd24-bd8f-11e5-9ec7-6b43f837ae71.png)
 </a>
@@ -32,21 +32,21 @@ At this time these are the code samples published so far:
 
 Each chapter folder contains a standalone project which is in fact the incremental iteration of the Pomodoro application that we will build through the learning journey proposed in the book. You will want to follow the deployment guidelines included at the README file available on each chapter folder.
 
-You will want to have a local web server pointing to the example folder you want to check. for the sake of simplicity I recommend using the excellent [lite-server](https://www.npmjs.com/package/lite-server) package provided by John Papa. 
+You will want to have a local web server pointing to the example folder you want to check. for the sake of simplicity I recommend using the excellent [lite-server](https://www.npmjs.com/package/lite-server) package provided by John Papa.
 
 ### Disclaimer
 
 While the book is still in Alpha state and the Angular 2 project keeps moving forward, breaking changes in the codebase may affect the reliability of the code examples provided.
 
-The author will do its best to keep the code samples provided as updated as possible, but we understand that you may encounter outdated snippets or missing scripts. Please post your enquiries in the [issues page](https://github.com/deeleman/angular2-essentials/issues) should you require further assistance.
+The author will do its best to keep the code samples provided as up-to-date as possible, but we understand that you may encounter outdated snippets or missing scripts. Please post your enquiries in the [issues page](https://github.com/deeleman/angular2-essentials/issues) should you require further assistance.
 
 ## About the author
 
-Pablo Deeleman is a self-taught, passionate developer who fell in love with the Web back in the late '90s and has been producing interactive designs and web desktop and mobile applications ever since. During all these years, he has fulfilled his career as both a UX designer and developer by successfully leading Internet projects for a wide range of clients, encompassing European online travel agencies, Silicon Valley-based start-ups, international heavy-traffic tube sites, global banking operators, or gambling and mobile gaming companies, to name a few.
+Pablo Deeleman is a self-taught, passionate developer who fell in love with the Web back in the late '90s and has been producing interactive designs and web desktop and mobile applications ever since. During all these years, he has fulfilled his career as both an UX designer and developer by successfully leading Internet projects for a wide range of clients and teams, encompassing European online travel operators, Silicon Valley-based start-ups, international heavy-traffic tube sites, global banking portals, or gambling and mobile gaming companies just to name a few.
 
 You may reach out Pablo Deeleman at:
 
-* [Linkedin](https://linkedin.com/in/pablodeeleman)
+* [LinkedIn](https://linkedin.com/in/pablodeeleman)
 * [Twitter](https://twitter.com/pablodeeleman)
 * [UIUX.es](http://uiux.es/)
 
