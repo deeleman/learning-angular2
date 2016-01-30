@@ -32,7 +32,7 @@ At this time these are the code samples published so far:
 
 Each chapter folder contains a standalone project which is in fact the incremental iteration of the Pomodoro application that we will build through the learning journey proposed in the book. You will want to follow the deployment guidelines included at the README file available on each chapter folder.
 
-You will want to install a local server properly configured to point to the example folder you want to check. We recommend using the excellent [lite-server](https://www.npmjs.com/package/lite-server) package by John Papa. 
+You will want to have a local web server pointing to the example folder you want to check. for the sake of simplicity I recommend using the excellent [lite-server](https://www.npmjs.com/package/lite-server) package provided by John Papa. 
 
 ### Disclaimer
 
