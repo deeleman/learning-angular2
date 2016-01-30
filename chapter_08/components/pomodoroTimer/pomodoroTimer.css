@@ -15,6 +15,5 @@
 }
 
 .pulse {
-    animation-name: pulse;
-    animation-duration: 1s;
+    animation: pulse 1s infinite;
 }
