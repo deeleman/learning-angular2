@@ -23,7 +23,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="#task of tasks; #i = index" class="ng-animate" highlight="highlight-row" #row="highlight" (click)="row.animate()">
+            <tr *ngFor="#task of tasks; #i = index" class="ng-animate highlight" #row="highlight" (click)="row.colorize()">
                 <th scope="row">{{i}} <span *ngIf="task.queued" class="label label-info ng-animate">Queued</span></th>
                 <td>{{task.name | slice: 0:35 }}<span [hidden]="task.name.length < 35">...</span></td>
                 <td>{{task.deadline | date: 'fullDate' }}
