@@ -37,7 +37,7 @@ export default class PomodoroTimer implements OnInit, CanReuse, OnReuse {
         private routeParams: RouteParams,
         private taskService: TaskService,
         private animationBuilder: AnimationBuilder,
-        private element: ElementRef) {
+        private elementRef: ElementRef) {
             this.fadeInAnimationBuilder = animationBuilder.css();
             this.fadeInAnimationBuilder.setDuration(1000)
                                 .setDelay(300)
@@ -55,7 +55,7 @@ export default class PomodoroTimer implements OnInit, CanReuse, OnReuse {
         }
 
         let animation = this.fadeInAnimationBuilder.start(
-            this.element.nativeElement.firstElementChild);
+            this.elementRef.nativeElement.firstElementChild);
 
         animation.onComplete(() => console.log('Animation completed!'));
     }
