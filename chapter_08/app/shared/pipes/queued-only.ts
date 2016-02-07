@@ -2,7 +2,7 @@ import { Pipe, PipeTransform } from 'angular2/core';
 import IQueueableModel from '../models/iqueueable';
 
 @Pipe({
-    name: 'queuedonly',
+    name: 'queuedOnly',
     pure: false
 })
 export default class QueuedOnlyPipe implements PipeTransform {

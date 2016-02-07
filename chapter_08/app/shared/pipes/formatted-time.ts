@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from 'angular2/core';
 
 @Pipe({
-    name: 'formattedtime'
+    name: 'formattedTime'
 })
 export default class FormattedTimePipe implements PipeTransform {
     transform(totalMinutes: number): string {

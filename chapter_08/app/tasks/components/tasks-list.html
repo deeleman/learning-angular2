@@ -2,10 +2,10 @@
     <article *ngIf="queuedPomodoros > 0">
         <h3>
             {{ queuedPomodoros }} Pomodoros for today
-            <span class="small">(Estimated time: {{ queuedPomodoros * pomodoroLength | formattedtime }})</span>
+            <span class="small">(Estimated time: {{ queuedPomodoros * pomodoroLength | formattedTime }})</span>
         </h3>
         <p>
-            <span *ngFor="#queuedTask of tasks | queuedonly: true">
+            <span *ngFor="#queuedTask of tasks | queuedOnly: true">
                 <pomodoro-task-icons [task]="queuedTask" [targetTooltip]="tooltip" size="50">
                 </pomodoro-task-icons>
             </span>
