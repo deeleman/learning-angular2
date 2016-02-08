@@ -11,7 +11,7 @@ import { bootstrap } from 'angular2/platform/browser';
         </div>
     `
 })
-class PomodoroTimer {
+class PomodoroTimerComponent {
     minutes: number;
     seconds: number;
     isPaused: boolean;
@@ -50,4 +50,4 @@ class PomodoroTimer {
     }
 }
 
-bootstrap(PomodoroTimer);
+bootstrap(PomodoroTimerComponent);
