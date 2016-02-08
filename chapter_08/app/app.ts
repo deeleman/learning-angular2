@@ -34,7 +34,7 @@ import RouterOutletDirective from './shared/directives/router-outlet';
                 </ul>
             </div>
         </nav>
-        <pomodoro-router-outlet protectedPath="tasks-editor" loginUrl="login">
+        <pomodoro-router-outlet protectedPath="tasks/editor" loginUrl="login">
         </pomodoro-router-outlet>
     `
 })
