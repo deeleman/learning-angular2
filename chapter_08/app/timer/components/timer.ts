@@ -8,7 +8,7 @@ import TimerWidgetComponent from './timer-widget';
     template: '<router-outlet></router-outlet>'
 })
 @RouteConfig([
-    { path: '/standalone', name: 'Standalone', component: TimerWidgetComponent, useAsDefault: true },
-    { path: '/task/:id', name: 'Task', component: TimerWidgetComponent },
+    { path: '/:id', name: 'TaskTimer',    component: TimerWidgetComponent },
+    { path: '/',    name: 'GenericTimer', component: TimerWidgetComponent, useAsDefault: true }
 ])
 export default class TimerComponent {}

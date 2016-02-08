@@ -43,7 +43,7 @@ export default class TasksListComponent implements OnInit {
     }
 
     workOn(index: number): void {
-        this.router.navigate(['TimerComponent', 'Task', { id: index }]);
+        this.router.navigate(['TimerComponent', 'TaskTimer', { id: index }]);
     }
 
     toggleTask(task: TaskModel): void {
