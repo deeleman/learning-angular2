@@ -39,11 +39,11 @@ import RouterOutletDirective from './shared/directives/router-outlet';
     `
 })
 @RouteConfig([
-    { path: '',                  name: 'Home',                   redirectTo: ['TasksListComponent'] },
-    { path: 'tasks',             name: 'TasksListComponent',     component: TasksListComponent, useAsDefault: true },
-    { path: 'tasks/timer/...',   name: 'TimerComponent',         component: TimerComponent },
-    { path: 'tasks/editor',      name: 'TasksEditorComponent',   component: TasksEditorComponent },
-    { path: 'taks/editor/login', name: 'LoginFormComponent',     component: LoginFormComponent }
+    { path: '',             name: 'Home',                   redirectTo: ['TasksListComponent'] },
+    { path: 'tasks',        name: 'TasksListComponent',     component: TasksListComponent, useAsDefault: true },
+    { path: 'tasks/editor', name: 'TasksEditorComponent',   component: TasksEditorComponent },
+    { path: 'timer/...',    name: 'TimerComponent',         component: TimerComponent },
+    { path: 'login',        name: 'LoginFormComponent',     component: LoginFormComponent }
 ])
 export default class AppComponent {
     userIsLogged: boolean;
