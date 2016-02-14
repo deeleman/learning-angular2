@@ -7,11 +7,11 @@ function Greeter(greeting: string) {
 }
 
 @Greeter('Howdy!')
-class MyGreetingClass {
+class Greeting {
     constructor() {
         // Implementation goes here...
     }
 }
 
-var myClass = new MyClass();
-myClass.greet();
+var myGreeting = new Greeting();
+myGreeting.greet(); // console outputs 'Howdy!'

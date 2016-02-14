@@ -17,7 +17,6 @@
     "zone.js": "0.5.10"
   },
   "devDependencies": {
-    "traceur": "0.0.93",
     "typescript": "1.7.5"
   }
 }

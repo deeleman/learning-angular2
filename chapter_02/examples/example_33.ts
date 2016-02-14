@@ -15,11 +15,15 @@ function LogChanges(callbackObject: any): void {
     }
 }
 
-class WatchedPropertiesExample {
+class Fruit {
     @LogChanges({
         onchange: function(newValue: string): void {
-            console.log(`The value of name just changed to ${newValue}`);
+            console.log(`The fruit is ${newValue} now`);
         }
     })
     name: string;
 }
+
+var fruit = new Fruit();
+fruit.name = 'banana';	   // console: 'The fruit is banana now'
+fruit.name = 'plantain'; // console: 'The fruit is plantain now'

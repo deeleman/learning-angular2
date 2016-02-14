@@ -3,9 +3,9 @@
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
         "target": "es5",
-        "module": "commonjs",
+        "module": "system",
+        "outDir": ".",
         "noImplicitAny": false,
-        "outDir": "built",
         "rootDir": ".",
         "sourceMap": false
     },

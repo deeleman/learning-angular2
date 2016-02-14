@@ -1,6 +1,7 @@
 ## Compiled JavaScript
 *.js
 *.js.map
+* built/
 
 ## Node.js
 lib-cov

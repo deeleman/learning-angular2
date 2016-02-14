@@ -7,3 +7,5 @@ class Calculator {
 
 var calc = new Calculator();
 calc.double(11);
+
+console.log(calc.loggedOutput); // Check [Object] array in console

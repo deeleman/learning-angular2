@@ -8,13 +8,17 @@ function LogChanges(target: Object, key: string) {
             },
             set: function(newValue) {
                 propertyValue = newValue;
-                console.log(`${key} value has changed to ${propertyValue}`);
+                console.log(`${key} is now ${propertyValue}`);
             }
         });
     }
 }
 
-class WatchedPropertiesExample {
+class Fruit {
     @LogChanges
     name: string;
 }
+
+var fruit = new Fruit();
+fruit.name = 'banana';	   // console outputs 'name is now banana'
+fruit.name = 'plantain'; // console outputs 'name is now plantain'
