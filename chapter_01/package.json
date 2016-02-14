@@ -2,7 +2,7 @@
   "name": "chapter01",
   "version": "0.0.1",
   "description": "Chapter 1 - Creating our first component in Angular 2",
-  "main": "PomodoroTimer.js",
+  "main": "pomodoro-timer.js",
   "keywords": [],
   "author": "Pablo Deeleman",
   "license": "ISC",
