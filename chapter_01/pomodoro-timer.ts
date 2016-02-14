@@ -7,7 +7,7 @@ import { bootstrap } from 'angular2/platform/browser';
   template: `
     <div class="text-center">
       <img src="assets/img/tomato.png" alt="Pomodoro">
-      <h1> {{ minutes }}:{{ seconds  | number: '2.0' }} </h1>
+      <h1> {{ minutes }}:{{ seconds | number: '2.0' }} </h1>
       <p>
         <button (click)="togglePause()"
           class="btn btn-danger">
