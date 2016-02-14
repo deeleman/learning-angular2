@@ -8,7 +8,7 @@ import { bootstrap } from 'angular2/platform/browser';
   encapsulation: ViewEncapsulation.Emulated,
   outputs: ['onComplete: countdownComplete', 'secondsChanged: seconds']
 })
-class Countdown {
+class CountdownComponent {
   @Input() seconds: number;
   intervalId: any; // The TypeScript compiler complains when the intervalId is typed as number
   onComplete: EventEmitter<any> = new EventEmitter();
@@ -29,7 +29,7 @@ class Countdown {
 
 @Component({
   selector: 'pomodoro-timer',
-  directives: [Countdown],
+  directives: [CountdownComponent],
   encapsulation: ViewEncapsulation.None,
   template: `<div class="container text-center">
                <img src="assets/img/tomato.png" alt="Pomodoro" />
@@ -43,11 +43,11 @@ class Countdown {
                </p>
             </div>`
 })
-class PomodoroTimer {
+class PomodoroTimerComponent {
   timeout: number = 10;
   onCountdownCompleted(): void {
     alert('Time up!');
   }
 }
 
-bootstrap(PomodoroTimer);
+bootstrap(PomodoroTimerComponent);

@@ -1,5 +1,5 @@
 ///<reference path="node_modules/angular2/typings/browser.d.ts"/>
-import { Component, ViewEncapsulation, Pipe, Directive, ElementRef, DynamicComponentLoader, HostBinding, Input, enableProdMode } from 'angular2/core';
+import { Component, ViewEncapsulation, Pipe, Directive, ElementRef, DynamicComponentLoader, HostBinding, Input } from 'angular2/core';
 import { bootstrap } from 'angular2/platform/browser';
 
 /// Local Data Service ******
@@ -110,7 +110,7 @@ class TaskModel {
   directives: [ResizeDirective],
   template: '<img #template pomodoroResize="50" src="/assets/img/tomato.png">'
 })
-class PomodoroIconComponent { }
+class PomodoroIconComponent {}
 
 /// - Application View Component
 
