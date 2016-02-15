@@ -6,7 +6,7 @@ import { bootstrap } from 'angular2/platform/browser';
   selector: 'pomodoro-timer',
   template: `
     <div class="text-center">
-      <img src="assets/img/tomato.png" alt="Pomodoro">
+      <img src="assets/img/pomodoro.png" alt="Pomodoro">
       <h1> {{ minutes }}:{{ seconds | number: '2.0' }} </h1>
       <p>
         <button (click)="togglePause()"
