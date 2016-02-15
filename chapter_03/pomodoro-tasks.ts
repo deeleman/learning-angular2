@@ -108,7 +108,7 @@ class TaskModel {
 @Component({
   selector: 'pomodoro-icon',
   directives: [ResizeDirective],
-  template: '<img #template pomodoroResize="50" src="/assets/img/tomato.png">'
+  template: '<img #template pomodoroResize="50" src="/assets/img/pomodoro.png">'
 })
 class PomodoroIconComponent {}
 

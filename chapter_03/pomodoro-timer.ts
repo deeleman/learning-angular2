@@ -32,7 +32,7 @@ class CountdownComponent {
   directives: [CountdownComponent],
   encapsulation: ViewEncapsulation.None,
   template: `<div class="container text-center">
-               <img src="assets/img/tomato.png" alt="Pomodoro" />
+               <img src="assets/img/pomodoro.png" alt="Pomodoro" />
                <countdown [seconds]="timeout" #timer
                  (seconds)="timeout = $event"
                  (countdownComplete)="onCountdownCompleted()">
