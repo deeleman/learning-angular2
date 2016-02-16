@@ -25,7 +25,7 @@ class PomodoroTimerComponent {
 
   constructor() {
     this.resetPomodoro();
-    setInterval(() => this.countDown(), 1000);
+    setInterval(() => this.tick(), 1000);
   }
 
   resetPomodoro(): void {
@@ -35,7 +35,7 @@ class PomodoroTimerComponent {
     this.buttonLabel = 'Start';
   }
 
-  countDown(): void {
+  private tick(): void {
     if (!this.isPaused) {
       this.buttonLabel = 'Pause';
 

@@ -1,5 +1,5 @@
 # Chapter 3
-## Enhancing our component  interactivity and layout
+## Enhancing our component interactivity and layout
 
 **Warning:** Our *Angular 2 Essentials* book, encompassing the code examples available here, is still in Alpha state and therefore the samples provided herein may be subject to change without prior notice.
 
@@ -21,17 +21,14 @@ $ tsc
 
 **Please note:** You will require a local server pointing to the chapter folder in order to execute the examples, accessible from the paths (replace the given port by your own if required):
 
-* http://localhost:3000/pomodoro-timer.html
-* http://localhost:3000/pomodoro-tasks.html
-
 ## Description
 
-Now that we’re familiar with the basic form and shape of an Angular component and the syntax that helps define it, we can go a step further and make them more expressive by means of property and event binding. For doing so we will take a comprehensive look on the Angular 2 template syntax, how data and behaviors are handled between the template and the component class, and how we can enrich its output even more by means of pipes and custom directives.
+Now that we’re familiar with the basic form and shape of an Angular component and the syntax that helps define it, we can go a step further and make them more expressive by means of property and event binding. For doing so we will take a comprehensive look on the Angular 2 template syntax, the component input and output endpoints and how data and behaviors are handled between the template and the component class.
 
 
 ### Topics covered
 
-We will go through the process of building complex templates, either inline or wrapped in views files. For doing so we will create a new component from scratch and build up on top of it. Then we will review how property binding is handled compared to the traditional JavaScript attribute value bindings. We will slightly overview event binding as well with short real examples of interactive behaviors and animations and will enhance the component output by implementing some built-in pipes and directives.
+We will go through the process of building complex templates, either inline or wrapped in views files. For doing so we will create a new component from scratch and build up on top of it. Then we will review how property binding is handled compared to the traditional JavaScript attribute value bindings. We will slightly overview event binding as well with short real examples of interactive behaviors.
 
 ### Skills learned
 
@@ -40,5 +37,3 @@ We will go through the process of building complex templates, either inline or w
 * Event binding.
 * Built-in pipes.
 * Built-in directives.
-* Components as directives with views vs Decorator-style directives.
-* Custom directives.

@@ -1,7 +1,7 @@
 {
   "name": "chapter03",
   "version": "1.0.0",
-  "description": "Chapter 3 - Enhancing our component  interactivity and layout - Example 2",
+  "description": "Chapter 3 - Enhancing our component interactivity",
   "main": "pomodoro-timer.js",
   "keywords": [],
   "author": "Pablo Deeleman",

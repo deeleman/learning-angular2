@@ -1,0 +1,18 @@
+<div class="container text-center">
+  <img src="assets/img/pomodoro.png" alt="Pomodoro"/>
+  <countdown
+    [seconds]="25"
+    (onComplete)="onCountdownCompleted()"
+    #counter>
+  </countdown>
+  <p>
+    <button class="btn btn-default" (click)="counter.seconds = 25">
+      Reset countdown to 25 seconds
+    </button>
+  </p>
+  <p *ngIf="counter.seconds < 10">
+    Beware! Only
+    <strong>{{ counter.seconds }} seconds</strong>
+    left.
+  </p>
+</div>
