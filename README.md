@@ -20,13 +20,14 @@ At this time these are the code samples published so far:
 
 * [Chapter 1 - Creating our first component in Angular 2](https://github.com/deeleman/angular2-essentials/tree/master/chapter_01)
 * [Chapter 2 - Introducing TypeScript](https://github.com/deeleman/angular2-essentials/tree/master/chapter_02)
-* [Chapter 3 - Enhancing our component  interactivity and layout](https://github.com/deeleman/angular2-essentials/tree/master/chapter_03)
-* [Chapter 4 - Building an application with Angular 2 components](https://github.com/deeleman/angular2-essentials/tree/master/chapter_04)
-* [Chapter 5 - Asynchronous data services with Angular 2](https://github.com/deeleman/angular2-essentials/tree/master/chapter_05)
-* [Chapter 6 - Routing in Angular 2](https://github.com/deeleman/angular2-essentials/tree/master/chapter_06)
-* [Chapter 7 - Forms and Authentication handling in Angular 2](https://github.com/deeleman/angular2-essentials/tree/master/chapter_07)
-* [Chapter 8 - Animating components with Angular 2](https://github.com/deeleman/angular2-essentials/tree/master/chapter_08)
-* Chapter 9 - Unit Testing with Angular 2 (coming soon)
+* [Chapter 3 - Implementing properties and events in our Components](https://github.com/deeleman/angular2-essentials/tree/master/chapter_03)
+* [Chapter 4 - Enhancing our components with Pipes and Directives](https://github.com/deeleman/angular2-essentials/tree/master/chapter_04)
+* [Chapter 5 - Building an application with Angular 2 components](https://github.com/deeleman/angular2-essentials/tree/master/chapter_05)
+* [Chapter 6 - Asynchronous data services with Angular 2](https://github.com/deeleman/angular2-essentials/tree/master/chapter_06)
+* [Chapter 7 - Routing in Angular 2](https://github.com/deeleman/angular2-essentials/tree/master/chapter_07)
+* [Chapter 8 - Forms and Authentication handling in Angular 2](https://github.com/deeleman/angular2-essentials/tree/master/chapter_08)
+* [Chapter 9 - Animating components with Angular 2](https://github.com/deeleman/angular2-essentials/tree/master/chapter_09)
+* Chapter 10 - Unit Testing with Angular 2 (coming soon)
 
 ### What do you need to run the examples?
 
