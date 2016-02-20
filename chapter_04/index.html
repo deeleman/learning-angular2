@@ -1,38 +1,35 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <meta charset="utf-8">
-    <title>My Angular 2 Pomodoro Application</title>
-
-    <script src="node_modules/es6-shim/es6-shim.js"></script>
+    <title>My Angular 2 Pomodoro Tasks</title>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
-
-    <script>
-        System.config({
-            defaultJSExtensions: true,
-            map: {
-                rxjs: 'node_modules/rxjs'
-            }
-        });
-    </script>
-
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
     <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
     <script src="node_modules/angular2/bundles/angular2.js"></script>
-    <script src="node_modules/angular2/bundles/http.js"></script>
-    <script src="node_modules/angular2/bundles/router.js"></script>
-    <script src="node_modules/rxjs/bundles/Rx.js"></script>
-
     <script>
-        System.import('bootstrap').catch(console.log.bind(console));
+      System.config({
+        packages: {
+          built: {
+            format: 'register',
+            defaultExtension: 'js'
+          }
+        }
+      });
+      System.import ('built/pomodoro-tasks')
+            .then(null, console.error.bind(console));
     </script>
 
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-
-</head>
-
-<body>
-    <pomodoro-app></pomodoro-app>
-</body>
-
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <strong class="navbar-brand">My Pomodoro Tasks</strong>
+        </div>
+      </div>
+    </nav>
+    <pomodoro-tasks></pomodoro-tasks>
+  </body>
 </html>

@@ -1,5 +1,5 @@
 # Chapter 4
-## Building an application with Angular 2 components
+## Powering up our component with Pipes and Directives
 
 **Warning:** Our *Angular 2 Essentials* book, encompassing the code examples available here, is still in Alpha state and therefore the samples provided herein may be subject to change without prior notice.
 
@@ -12,31 +12,28 @@ $ git clone https://github.com/deeleman/angular2-essentials.git
 $ cd angular2-essentials/chapter_04
 $ npm install
 ```
-A TypeScript project settings file ([tsconfig.json](./tsconfig.json)) has been made available in order to ease the project files transpilation into ECMAScript 5.  If you don't have the TypeScript compiler installed, you can [get it here](http://www.typescriptlang.org/). **Warning:** At the time of this writing, the TypeScript compiler on its 1.8 version will complain when transpiling Angular code implementing async interfaces based on Promises. Please use version 1.7.5 or earlier. Once installed, you can compile the project by simply executing the `tsc` command in your console. Please refer to chapter 1 in the book for further instructions, or execute the following in your terminal window after moving the prompt to the chapter folder:
+A TypeScript project settings file ([tsconfig.json](./tsconfig.json)) has been made available to ease the project files transpilation into ECMAScript 5.  If you don't have the TypeScript compiler installed, you can [get it here](http://www.typescriptlang.org/). **Warning:** At the time of this writing, the TypeScript compiler on its 1.8 version will complain when transpiling Angular code implementing async interfaces based on Promises. Please use version 1.7.5 or earlier. Once installed, you can compile the project by simply executing the `tsc` command in your console. Please refer to chapter 1 in the book for further instructions, or execute the following in your terminal:
 
 ```bash
 $ npm i -g typescript@1.7.5
 $ tsc
 ```
 
-**Please note:** You will require a local server pointing to this folder in order to execute the examples.
+**Please note:** You will require a local server pointing to the chapter folder in order to execute the examples, accessible from the paths (replace the given port by your own if required):
 
 ## Description
 
-Now that the reader has learned how to build the standalone bricks of an Angular 2 application, its time to glue all our components together in the context of a larger frameset. An Angular 2 application is in fact a hierarchy of components with other components nested within them, and that paradigm will be thoroughly analyzed in this chapter.
+We will take a comprehensive overview on how we can enrich the output of our custom Angular 2 components by means of pipes and custom directives.
+
 
 ### Topics covered
 
-We will build up on the two components we shipped back in chapters 1 and 3 and will wrap them around a root component instantiated by a global application bootstrapper which is also in charge for managing dependency injection application wide.
-
-This is our first step on building the broader components tree our application will turn into by the end of the book. We will then recap more thoroughly on how Angular handles dependency injection and how to inject dependencies between components.
+We will go through the process of building complex templates, either inline or wrapped in views files. For doing so we will create a new component from scratch and build up on top of it. Then we will review how property binding is handled compared to the traditional JavaScript attribute value bindings. We will slightly overview event binding as well with short real examples of interactive behaviors and animations and will enhance the component output by implementing some built-in pipes and directives.
 
 ### Skills learned
 
-* Building root components with advanced bootstrapping.
-* Full comprehensive understanding of Angular 2’s dependency injection paradigm.
-* Host and Visibility relationships between components.
-* Nesting components and handling data-binding between them.
-* Using the EventEmitter to allow custom event binding and bubbling.
-* Building custom pipes.
-* Component lifecycle.
+* Using data stores with our components
+* Built-in pipes.
+* Built-in directives.
+* Components as directives with views vs Decorator-style directives.
+* Custom directives.
