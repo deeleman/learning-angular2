@@ -1,7 +1,7 @@
 h3, p {
     text-align: center;
 }
-table {
+.table {
     margin: auto;
     max-width: 860px;
 }

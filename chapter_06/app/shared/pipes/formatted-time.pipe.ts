@@ -1,9 +1,9 @@
-import { Pipe } from 'angular2/core';
+import { Pipe, PipeTransform } from 'angular2/core';
 
 @Pipe({
-    name: 'formattedTime'
+    name: 'pomodoroFormattedTime'
 })
-export default class FormattedTimePipe {
+export default class FormattedTimePipe implements PipeTransform {
     transform(totalMinutes: number): string {
         let minutes: number = totalMinutes % 60;
         let hours: number = Math.floor(totalMinutes / 60);
