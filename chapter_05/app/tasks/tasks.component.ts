@@ -26,26 +26,25 @@ export default class TasksComponent implements OnInit {
             private taskService: TaskService,
             private settingsService: SettingsService) {
 
-        this.today = new Date();
         this.tasks = this.taskService.taskStore;
-
+        this.today = new Date();
         this.pomodoroDuration = settingsService.minutes;
     }
 
     ngOnInit(): void {
-        this.renderPomodoros();
-    }
-
-    renderPomodoros() {
-      this.queuedPomodoros = this.tasks
-        .filter((Task: TaskModel) => Task.queued)
-        .reduce((pomodoros: number, queuedTask: TaskModel) => {
-          return pomodoros + queuedTask.pomodorosRequired;
-        }, 0);
+        this.updateQueuedPomodoros();
     }
 
     toggleTask(task: TaskModel): void {
-        task.queued = !task.queued;
-        this.renderPomodoros();
+      task.queued = !task.queued;
+      this.updateQueuedPomodoros();
+    }
+
+    private updateQueuedPomodoros(): void {
+      this.queuedPomodoros = this.tasks
+        .filter((Task: TaskModel) => Task.queued)
+        .reduce((pomodoros: number, queuedTask: TaskModel) => {
+        return pomodoros + queuedTask.pomodorosRequired;
+      }, 0);
     }
 };
