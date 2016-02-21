@@ -15,8 +15,8 @@ import TaskTooltipDirective from './task-tooltip.directive';
     selector: 'pomodoro-tasks',
     directives: [TaskIconsComponent, HighlightDirective, TaskTooltipDirective],
     pipes: [FormattedTimePipe, QueuedOnlyPipe],
-    styleUrls: ['app/tasks/tasks.css'],
-    templateUrl: 'app/tasks/tasks.html'
+    styleUrls: ['app/tasks/tasks.component.css'],
+    templateUrl: 'app/tasks/tasks.component.html'
 })
 export default class TasksComponent implements OnInit {
     today: Date;
