@@ -1,23 +1,26 @@
 {
-  "name": "chapter05",
+  "name": "chapter_05",
   "version": "1.0.0",
-  "description": "Chapter 5 - Asynchronous data services with Angular 2",
+  "description": "Chapter 8 - Building an application with Angular 2",
   "main": "bootstrap.js",
   "keywords": [],
   "author": "Pablo Deeleman",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/deeleman/angular2-essentials.git"
+  },
   "license": "ISC",
   "dependencies": {
-    "angular2": "^2.0.0-beta.2",
+    "angular2": "2.0.0-beta.7",
     "bootstrap": "^3.3.6",
     "es6-promise": "^3.0.2",
-    "es6-shim": "^0.33.13",
+    "es6-shim": "^0.33.3",
     "reflect-metadata": "0.1.2",
-    "rxjs": "5.0.0-beta.0",
+    "rxjs": "5.0.0-beta.2",
     "systemjs": "^0.19.9",
-    "zone.js": "0.5.10"
+    "zone.js": "0.5.15"
   },
   "devDependencies": {
-    "traceur": "0.0.93",
     "typescript": "1.7.5"
   }
 }

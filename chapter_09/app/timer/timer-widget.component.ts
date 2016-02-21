@@ -7,7 +7,7 @@ import { CssAnimationBuilder } from 'angular2/src/animate/css_animation_builder'
 @Component({
   selector: 'pomodoro-timer-widget',
   providers: [AnimationBuilder],
-  styleUrls: ['app/timer/timer-widget.css'],
+  styleUrls: ['app/timer/timer-widget.component.css'],
   template: `
         <div class="text-center">
             <img src="/app/shared/assets/img/pomodoro.png"

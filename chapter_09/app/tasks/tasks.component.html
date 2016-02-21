@@ -1,0 +1,71 @@
+<div class="container text-center">
+  <img src="/app/shared/assets/img/pomodoro.png" alt="Pomodoro"/>
+  <div *ngIf="queuedPomodoros > 0">
+    <h3>
+      {{ queuedPomodoros }}
+      Pomodoros for today
+      <span class="small">(Estimated time:
+        {{ queuedPomodoros * pomodoroDuration | pomodoroFormattedTime }})</span>
+    </h3>
+    <p>
+      <span *ngFor="#queuedTask of tasks | pomodoroQueuedOnly: true ">
+        <pomodoro-task-icons
+          [task]="queuedTask"
+          [taskTooltip]="tooltip"
+          size="50">
+        </pomodoro-task-icons>
+      </span>
+    </p>
+    <p #tooltip>Mouseover for details</p>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Task ID</th>
+        <th>Task name</th>
+        <th>Deliver by</th>
+        <th>Pomodoros</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="#task of tasks; #i = index"
+        class="ng-animate pomodoro-highlight"
+        #row="pomodoroHighlight"
+        (click)="row.colorize()">
+        <th scope="row">{{i}}
+          <span *ngIf="task.queued" class="label label-info ng-animate">Queued</span>
+        </th>
+        <td>{{task.name | slice: 0:35 }}
+          <span [hidden]="task.name.length < 35">...</span>
+        </td>
+        <td>{{task.deadline | date: 'fullDate' }}
+          <span *ngIf="task.deadline < today" class="label label-danger">Due</span>
+        </td>
+        <td class="text-center">{{task.pomodorosRequired}}</td>
+        <td>
+          <button type="button" class="btn btn-default btn-xs" [ngSwitch]="task.queued" (click)="toggleTask(task)">
+            <template [ngSwitchWhen]="false">
+              <i class="glyphicon glyphicon-plus-sign"></i>
+              Add
+            </template>
+            <template [ngSwitchWhen]="true">
+              <i class="glyphicon glyphicon-minus-sign"></i>
+              Remove
+            </template>
+            <template ngSwitchDefault>
+              <i class="glyphicon glyphicon-plus-sign"></i>
+              Add
+            </template>
+          </button>
+          <button type="button"
+            class="btn btn-default btn-xs"
+            *ngIf="task.queued"
+            (click)="workOn(i)">
+            <i class="glyphicon glyphicon-expand"></i> Start
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

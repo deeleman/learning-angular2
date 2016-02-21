@@ -22,7 +22,7 @@ export default class TasksComponent implements OnInit {
     today: Date;
     tasks: TaskModel[];
     queuedPomodoros: number;
-    pomodoroLength: number;
+    pomodoroDuration: number;
 
     constructor(
             private taskService: TaskService,
@@ -32,7 +32,7 @@ export default class TasksComponent implements OnInit {
         this.today = new Date();
         this.tasks = this.taskService.taskStore;
 
-        this.pomodoroLength = settingsService.minutes;
+        this.pomodoroDuration = settingsService.minutes;
     }
 
     ngOnInit(): void {

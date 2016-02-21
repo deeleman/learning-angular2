@@ -1,19 +1,24 @@
 {
-  "name": "chapter04",
+  "name": "chapter_04",
   "version": "1.0.0",
   "description": "Chapter 3 - Optimizing our component output with Pipes and Directives",
-  "main": "pomodoro-tasks.js",
+  "main": "bootstrap.js",
   "keywords": [],
   "author": "Pablo Deeleman",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/deeleman/angular2-essentials.git"
+  },
   "license": "ISC",
   "dependencies": {
     "angular2": "2.0.0-beta.6",
     "bootstrap": "^3.3.6",
+    "es6-promise": "^3.0.2",
     "es6-shim": "^0.33.3",
     "reflect-metadata": "0.1.2",
-    "rxjs": "5.0.0-beta.0",
+    "rxjs": "5.0.0-beta.2",
     "systemjs": "^0.19.9",
-    "zone.js": "0.5.14"
+    "zone.js": "0.5.15"
   },
   "devDependencies": {
     "typescript": "1.7.5"

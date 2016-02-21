@@ -1,19 +1,15 @@
+///<reference path="node_modules/angular2/typings/browser.d.ts"/>
+
 import 'rxjs/add/operator/map';
 import { bootstrap } from 'angular2/platform/browser';
 import { enableProdMode, provide } from 'angular2/core';
-import { HTTP_PROVIDERS } from 'angular2/http';
-import { ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy } from 'angular2/router';
-import { FORM_PROVIDERS } from 'angular2/common';
-import { POMODORO_PROVIDERS } from './services/services';
-import PomodoroApp from './components/PomodoroApp';
+import { LocationStrategy, HashLocationStrategy } from 'angular2/router';
+import AppComponent from './app/app.component';
 
-enableProdMode();
+ // Uncomment the line below to enable Angular 2 execution in production mode
+//enableProdMode();
 
-bootstrap(PomodoroApp, [
-    HTTP_PROVIDERS,
-    ROUTER_PROVIDERS,
-    FORM_PROVIDERS,
-    POMODORO_PROVIDERS,
+bootstrap(AppComponent, [
     // Uncomment the line below to enable hash-based navigation
     //provide(LocationStrategy, { useClass: HashLocationStrategy })
 ]);

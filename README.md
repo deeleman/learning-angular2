@@ -27,7 +27,9 @@ At this time these are the code samples published so far:
 * [Chapter 7 - Routing in Angular 2](https://github.com/deeleman/angular2-essentials/tree/master/chapter_07)
 * [Chapter 8 - Forms and Authentication handling in Angular 2](https://github.com/deeleman/angular2-essentials/tree/master/chapter_08)
 * [Chapter 9 - Animating components with Angular 2](https://github.com/deeleman/angular2-essentials/tree/master/chapter_09)
-* Chapter 10 - Unit Testing with Angular 2 (coming soon)
+* Chapter 10 - Unit Testing Angular 2 applications
+
+ (coming soon)
 
 ### What do you need to run the examples?
 
