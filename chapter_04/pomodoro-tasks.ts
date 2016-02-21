@@ -9,45 +9,6 @@ import {
 } from 'angular2/core';
 import { bootstrap } from 'angular2/platform/browser';
 
-/// Local Data Service
-
-class TaskService {
-  tasks: Object[];
-  public taskStore: Array<TaskModel> = [];
-
-  constructor() {
-      this.tasks = [
-          {
-              name: "Code an HTML Table",
-              deadline: "Mon Jun 23 2015 12:00:00 GMT+0200 (CEST)",
-              timeRequired: 25
-          }, {
-              name: "Sketch a wireframe for the new homepage",
-              deadline: "Tue Jun 24 2016 12:00:00 GMT+0200 (CEST)",
-              timeRequired: 50
-          }, {
-              name: "Style table with Bootstrap styles",
-              deadline: "Wed Jun 25 2016 12:00:00 GMT+0200 (CEST)",
-              timeRequired: 25
-          }, {
-              name: "Reinforce SEO with custom sitemap.xml",
-              deadline: "Wed Jun 26 2016 12:00:00 GMT+0200 (CEST)",
-              timeRequired: 75
-          }
-      ];
-      this.loadTasks();
-  }
-
-  loadTasks(): void {
-      this.taskStore = this.tasks.map((rawTaskObject: any) => {
-        return new TaskModel(
-          rawTaskObject.name,
-          rawTaskObject.deadline,
-          rawTaskObject.timeRequired);
-      });
-  }
-}
-
 /// Model class
 
 class TaskModel {
@@ -61,11 +22,46 @@ class TaskModel {
     deadline?: any,
     timeRequired: number = 25,
     queued: boolean = false
-  ) {
+    ) {
     this.name = name;
     this.deadline = new Date(deadline);
     this.queued = queued;
     this.pomodorosRequired = Math.floor(timeRequired / 25);
+  }
+}
+
+/// Local Data Service
+
+class TaskService {
+  public taskStore: Array<TaskModel> = [];
+
+  constructor() {
+    const tasks = [
+      {
+        name: "Code an HTML Table",
+        deadline: "Mon Jun 23 2015 12:00:00 GMT+0200 (CEST)",
+        timeRequired: 25
+      }, {
+        name: "Sketch a wireframe for the new homepage",
+        deadline: "Tue Jun 24 2016 12:00:00 GMT+0200 (CEST)",
+        timeRequired: 50
+      }, {
+        name: "Style table with Bootstrap styles",
+        deadline: "Wed Jun 25 2016 12:00:00 GMT+0200 (CEST)",
+        timeRequired: 25
+      }, {
+        name: "Reinforce SEO with custom sitemap.xml",
+        deadline: "Wed Jun 26 2016 12:00:00 GMT+0200 (CEST)",
+        timeRequired: 75
+      }
+    ];
+
+    this.taskStore = tasks.map((rawTaskObject: any) => {
+      return new TaskModel(
+        rawTaskObject.name,
+        rawTaskObject.deadline,
+        rawTaskObject.timeRequired);
+    });
   }
 }
 
@@ -106,14 +102,14 @@ class TaskTooltipDirective {
 
   @HostListener('mouseover')
   onMouseOver() {
-    if(!this.defaultTooltipText && this.taskTooltip) {
+    if (!this.defaultTooltipText && this.taskTooltip) {
       this.defaultTooltipText = this.taskTooltip.innerText;
     }
     this.taskTooltip.innerText = this.task.name;
   }
   @HostListener('mouseout')
   onMouseOut() {
-    if(this.taskTooltip) {
+    if (this.taskTooltip) {
       this.taskTooltip.innerText = this.defaultTooltipText;
     }
   }
@@ -151,29 +147,29 @@ class TaskIconsComponent implements OnInit {
   templateUrl: 'pomodoro-tasks.html'
 })
 class TasksComponent {
-    today: Date;
-    tasks: TaskModel[];
-    queuedPomodoros: number;
+  today: Date;
+  tasks: TaskModel[];
+  queuedPomodoros: number;
 
-    constructor() {
-        const taskService: TaskService = new TaskService();
-        this.tasks = taskService.taskStore;
-        this.today = new Date();
-        this.renderPomodoros();
-    }
+  constructor() {
+    const taskService: TaskService = new TaskService();
+    this.tasks = taskService.taskStore;
+    this.today = new Date();
+    this.updateQueuedPomodoros();
+  }
 
-    renderPomodoros() {
-      this.queuedPomodoros = this.tasks
-        .filter((Task: TaskModel) => Task.queued)
-        .reduce((pomodoros: number, queuedTask: TaskModel) => {
-          return pomodoros + queuedTask.pomodorosRequired;
-        }, 0);
-    }
+  toggleTask(task: TaskModel): void {
+    task.queued = !task.queued;
+    this.updateQueuedPomodoros();
+  }
 
-    toggleTask(task: TaskModel): void {
-        task.queued = !task.queued;
-        this.renderPomodoros();
-    }
+  private updateQueuedPomodoros(): void {
+    this.queuedPomodoros = this.tasks
+      .filter((Task: TaskModel) => Task.queued)
+      .reduce((pomodoros: number, queuedTask: TaskModel) => {
+      return pomodoros + queuedTask.pomodorosRequired;
+    }, 0);
+  }
 };
 
 bootstrap(TasksComponent);
