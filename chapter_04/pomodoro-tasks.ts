@@ -1,4 +1,3 @@
-///<reference path="node_modules/angular2/typings/browser.d.ts"/>
 import {
   Component,
   Input,
@@ -9,58 +8,48 @@ import {
 } from 'angular2/core';
 import { bootstrap } from 'angular2/platform/browser';
 
-/// Model class
+/// Model interface
 
-class TaskModel {
+interface Task {
   name: string;
   deadline: Date;
   queued: boolean;
   pomodorosRequired: number;
-
-  constructor(
-    name?: string,
-    deadline?: any,
-    timeRequired: number = 25,
-    queued: boolean = false
-    ) {
-    this.name = name;
-    this.deadline = new Date(deadline);
-    this.queued = queued;
-    this.pomodorosRequired = Math.floor(timeRequired / 25);
-  }
 }
 
 /// Local Data Service
 
 class TaskService {
-  public taskStore: Array<TaskModel> = [];
+  public taskStore: Array<Task> = [];
 
   constructor() {
     const tasks = [
       {
         name: "Code an HTML Table",
-        deadline: "Mon Jun 23 2015 12:00:00 GMT+0200 (CEST)",
-        timeRequired: 25
+        deadline: "Jun 23 2015",
+        pomodorosRequired: 1
       }, {
         name: "Sketch a wireframe for the new homepage",
-        deadline: "Tue Jun 24 2016 12:00:00 GMT+0200 (CEST)",
-        timeRequired: 50
+        deadline: "Jun 24 2016",
+        pomodorosRequired: 2
       }, {
         name: "Style table with Bootstrap styles",
-        deadline: "Wed Jun 25 2016 12:00:00 GMT+0200 (CEST)",
-        timeRequired: 25
+        deadline: "Jun 25 2016",
+        pomodorosRequired: 1
       }, {
         name: "Reinforce SEO with custom sitemap.xml",
-        deadline: "Wed Jun 26 2016 12:00:00 GMT+0200 (CEST)",
-        timeRequired: 75
+        deadline: "Jun 26 2016",
+        pomodorosRequired: 3
       }
     ];
 
-    this.taskStore = tasks.map((rawTaskObject: any) => {
-      return new TaskModel(
-        rawTaskObject.name,
-        rawTaskObject.deadline,
-        rawTaskObject.timeRequired);
+    this.taskStore = tasks.map(task => {
+      return {
+        name: task.name,
+        deadline: new Date(task.deadline),
+        queued: false,
+        pomodorosRequired: task.pomodorosRequired
+      };
     });
   }
 }
@@ -83,9 +72,9 @@ class FormattedTimePipe {
   pure: false
 })
 class QueuedOnlyPipe {
-  transform(taskModels: TaskModel[], args?: any[]): TaskModel[] {
-    return taskModels.filter((taskModel: TaskModel) => {
-      return taskModel.queued === args[0];
+  transform(tasks: Task[], args?: any[]): Task[] {
+    return tasks.filter((task: Task) => {
+      return task.queued === args[0];
     });
   }
 }
@@ -97,7 +86,7 @@ class QueuedOnlyPipe {
 })
 class TaskTooltipDirective {
   private defaultTooltipText: string;
-  @Input() task: TaskModel;
+  @Input() task: Task;
   @Input() taskTooltip: any;
 
   @HostListener('mouseover')
@@ -126,14 +115,13 @@ class TaskTooltipDirective {
                   width="{{size}}">`
 })
 class TaskIconsComponent implements OnInit {
-  @Input() task: TaskModel;
+  @Input() task: Task;
   @Input() size: number;
   icons: Object[] = [];
 
   ngOnInit() {
-    for (let i = 0; i < this.task.pomodorosRequired; i++) {
-      this.icons.push({ name: this.task.name });
-    }
+    this.icons.length = this.task.pomodorosRequired;
+    this.icons.fill({ name: this.task.name });
   }
 }
 
@@ -148,8 +136,13 @@ class TaskIconsComponent implements OnInit {
 })
 class TasksComponent {
   today: Date;
-  tasks: TaskModel[];
+  tasks: Task[];
   queuedPomodoros: number;
+  queueHeaderMapping: any = {
+    '=0': 'No pomodoros',
+    '=1': 'One pomodoro',
+    'other': '# pomodoros'
+  };
 
   constructor() {
     const taskService: TaskService = new TaskService();
@@ -158,15 +151,15 @@ class TasksComponent {
     this.updateQueuedPomodoros();
   }
 
-  toggleTask(task: TaskModel): void {
+  toggleTask(task: Task): void {
     task.queued = !task.queued;
     this.updateQueuedPomodoros();
   }
 
   private updateQueuedPomodoros(): void {
     this.queuedPomodoros = this.tasks
-      .filter((Task: TaskModel) => Task.queued)
-      .reduce((pomodoros: number, queuedTask: TaskModel) => {
+      .filter((task: Task) => task.queued)
+      .reduce((pomodoros: number, queuedTask: Task) => {
       return pomodoros + queuedTask.pomodorosRequired;
     }, 0);
   }
