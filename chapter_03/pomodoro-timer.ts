@@ -1,4 +1,3 @@
-///<reference path="node_modules/angular2/typings/browser.d.ts"/>
 import { Component, EventEmitter, Input, Output, ViewEncapsulation } from 'angular2/core';
 import { bootstrap } from 'angular2/platform/browser';
 
@@ -11,8 +10,8 @@ import { bootstrap } from 'angular2/platform/browser';
 class CountdownComponent {
   @Input() seconds: number;
   intervalId: number;
-  @Output() onComplete: EventEmitter<any> = new EventEmitter();
-  @Output() onProgress: EventEmitter<number> = new EventEmitter();
+  @Output() complete: EventEmitter<any> = new EventEmitter();
+  @Output() progress: EventEmitter<number> = new EventEmitter();
 
   constructor() {
     this.intervalId = setInterval(() => this.tick(), 1000);
@@ -21,16 +20,16 @@ class CountdownComponent {
   private tick(): void {
     if (--this.seconds < 1) {
       clearTimeout(this.intervalId);
-      this.onComplete.emit(null);
+      this.complete.emit(null);
     }
-    this.onProgress.emit(this.seconds);
+    this.progress.emit(this.seconds);
   }
 }
 
 @Component({
   selector: 'pomodoro-timer',
   directives: [CountdownComponent],
-  templateUrl: './pomodoro-timer.view.html'
+  templateUrl: './pomodoro-timer.html'
 })
 class PomodoroTimerComponent {
   onCountdownCompleted(): void {
