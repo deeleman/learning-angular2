@@ -1,7 +1,7 @@
 {
   "name": "chapter_04",
   "version": "1.0.0",
-  "description": "Chapter 3 - Optimizing our component output with Pipes and Directives",
+  "description": "Chapter 4 - Optimizing our component output with Pipes and Directives",
   "main": "bootstrap.js",
   "keywords": [],
   "author": "Pablo Deeleman",
@@ -20,7 +20,7 @@
   },
   "license": "ISC",
   "dependencies": {
-    "angular2": "2.0.0-beta.8",
+    "angular2": "2.0.0-beta.9",
     "bootstrap": "^3.3.6",
     "es6-promise": "^3.0.2",
     "es6-shim": "^0.33.3",

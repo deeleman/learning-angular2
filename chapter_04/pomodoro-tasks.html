@@ -1,23 +1,21 @@
 <div class="container text-center">
   <img src="assets/img/pomodoro.png" alt="Pomodoro"/>
   <div class="container">
-    <div>
-      <h3>
-        {{ queuedPomodoros | i18nPlural: queueHeaderMapping }} for today
-        <span class="small" *ngIf="queuedPomodoros > 0">(Estimated time:
-          {{ queuedPomodoros * 25 | pomodoroFormattedTime }})</span>
-      </h3>
-      <p>
-        <span *ngFor="#queuedTask of tasks | pomodoroQueuedOnly: true ">
-          <pomodoro-task-icons
-            [task]="queuedTask"
-            [taskTooltip]="tooltip"
-            size="50">
-          </pomodoro-task-icons>
-        </span>
-      </p>
-      <p #tooltip *ngIf="queuedPomodoros > 0">Mouseover for details</p>
-    </div>
+    <h3>
+      {{ queuedPomodoros | i18nPlural: queueHeaderMapping }} for today
+      <span class="small" *ngIf="queuedPomodoros > 0">(Estimated time:
+        {{ queuedPomodoros * 25 | pomodoroFormattedTime }})</span>
+    </h3>
+    <p>
+      <span *ngFor="#queuedTask of tasks | pomodoroQueuedOnly: true ">
+        <pomodoro-task-icons
+          [task]="queuedTask"
+          [taskTooltip]="tooltip"
+          size="50">
+        </pomodoro-task-icons>
+      </span>
+    </p>
+    <p #tooltip [hidden]="queuedPomodoros === 0">Mouseover for details</p>
 
     <h4>Tasks backlog</h4>
     <table class="table">
