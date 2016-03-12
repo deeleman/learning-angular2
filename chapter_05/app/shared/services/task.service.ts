@@ -1,5 +1,7 @@
+import { Injectable } from 'angular2/core';
 import { Task } from '../shared';
 
+@Injectable()
 export default class TaskService {
   public taskStore: Array<Task> = [];
 

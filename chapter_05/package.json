@@ -2,7 +2,7 @@
   "name": "chapter_05",
   "version": "1.0.0",
   "description": "Chapter 5 - Building an application with Angular 2",
-  "main": "bootstrap.js",
+  "main": "main.js",
   "keywords": [],
   "author": "Pablo Deeleman",
   "repository": {

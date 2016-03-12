@@ -5,14 +5,13 @@ import {
   TaskService,
   SettingsService,
   Task,
-  FormattedTimePipe,
-  QueuedOnlyPipe
+  SHARED_PIPES
 } from '../shared/shared';
 
 @Component({
   selector: 'pomodoro-tasks',
   directives: [TaskIconsComponent, TaskTooltipDirective],
-  pipes: [FormattedTimePipe, QueuedOnlyPipe],
+  pipes: [SHARED_PIPES],
   styleUrls: ['app/tasks/tasks.component.css'],
   templateUrl: 'app/tasks/tasks.component.html'
 })

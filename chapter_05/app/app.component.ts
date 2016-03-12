@@ -1,12 +1,12 @@
 import { Component } from 'angular2/core';
-import { TimerWidgetComponent } from './timer/timer';
-import { TasksComponent } from './tasks/tasks';
-import { POMODORO_PROVIDERS } from './shared/shared';
+import { TIMER_DIRECTIVES } from './timer/timer';
+import { TASKS_DIRECTIVES } from './tasks/tasks';
+import { SHARED_PROVIDERS } from './shared/shared';
 
 @Component({
   selector: 'pomodoro-app',
-  directives: [TimerWidgetComponent, TasksComponent],
-  providers: [POMODORO_PROVIDERS],
+  directives: [TIMER_DIRECTIVES, TASKS_DIRECTIVES],
+  providers: [SHARED_PROVIDERS],
   template: `
     <nav class="navbar navbar-default navbar-static-top">
       <div class="container">
@@ -15,6 +15,7 @@ import { POMODORO_PROVIDERS } from './shared/shared';
         </div>
       </div>
     </nav>
+
     <pomodoro-timer-widget></pomodoro-timer-widget>
     <pomodoro-tasks></pomodoro-tasks>
     `

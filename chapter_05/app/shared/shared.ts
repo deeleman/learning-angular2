@@ -7,7 +7,12 @@ import QueuedOnlyPipe from './pipes/queued-only.pipe';
 import SettingsService from './services/settings.service';
 import TaskService from './services/task.service';
 
-const POMODORO_PROVIDERS: any[] = [
+const SHARED_PIPES: any[] = [
+  FormattedTimePipe,
+  QueuedOnlyPipe
+];
+
+const SHARED_PROVIDERS: any[] = [
   SettingsService,
   TaskService
 ];
@@ -18,8 +23,9 @@ export {
 
   FormattedTimePipe,
   QueuedOnlyPipe,
+  SHARED_PIPES,
 
   SettingsService,
   TaskService,
-  POMODORO_PROVIDERS
+  SHARED_PROVIDERS
 };
