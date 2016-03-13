@@ -1,53 +1,54 @@
 import { Component, OnInit } from 'angular2/core';
-import {
-  TaskService,
-  SettingsService,
-  TaskModel,
-  FormattedTimePipe,
-  QueuedOnlyPipe
-} from '../shared/shared';
 import TaskIconsComponent from './task-icons.component';
 import TaskTooltipDirective from './task-tooltip.directive';
+import {
+TaskService,
+SettingsService,
+Task,
+SHARED_PIPES
+} from '../shared/shared';
 
 @Component({
-    selector: 'pomodoro-tasks',
-    directives: [TaskIconsComponent, TaskTooltipDirective],
-    pipes: [FormattedTimePipe, QueuedOnlyPipe],
-    styleUrls: ['app/tasks/tasks.component.css'],
-    templateUrl: 'app/tasks/tasks.component.html'
+  selector: 'pomodoro-tasks',
+  directives: [TaskIconsComponent, TaskTooltipDirective],
+  pipes: [SHARED_PIPES],
+  styleUrls: ['app/tasks/tasks.component.css'],
+  templateUrl: 'app/tasks/tasks.component.html'
 })
 export default class TasksComponent implements OnInit {
-    today: Date;
-    tasks: TaskModel[];
-    queuedPomodoros: number;
-    pomodoroDuration: number;
+  today: Date;
+  tasks: Task[];
+  queuedPomodoros: number;
+  queueHeaderMapping: any;
+  timerMinutes: number;
 
-    constructor(
-            private taskService: TaskService,
-            private settingsService: SettingsService) {
+  constructor(
+    private taskService: TaskService,
+    private settingsService: SettingsService) {
 
-        this.today = new Date();
-        this.tasks = this.taskService.taskStore;
-        this.pomodoroDuration = settingsService.minutes;
-    }
+    this.tasks = this.taskService.taskStore;
+    this.today = new Date();
+    this.queueHeaderMapping = settingsService.pluralsMap.tasks;
+    this.timerMinutes = settingsService.timerMinutes;
+  }
 
-    ngOnInit(): void {
-        this.taskService.tasks.subscribe(updatedTasks => {
-          this.tasks = updatedTasks
-        });
-        this.updateQueuedPomodoros();
-    }
+  ngOnInit(): void {
+    this.taskService.tasks.subscribe(updatedTasks => {
+      this.tasks = updatedTasks
+    });
+    this.updateQueuedPomodoros();
+  }
 
-    toggleTask(task: TaskModel): void {
-        task.queued = !task.queued;
-        this.updateQueuedPomodoros();
-    }
+  toggleTask(task: Task): void {
+    task.queued = !task.queued;
+    this.updateQueuedPomodoros();
+  }
 
-    private updateQueuedPomodoros(): void {
-      this.queuedPomodoros = this.tasks
-        .filter((Task: TaskModel) => Task.queued)
-        .reduce((pomodoros: number, queuedTask: TaskModel) => {
-        return pomodoros + queuedTask.pomodorosRequired;
-      }, 0);
-    }
+  private updateQueuedPomodoros(): void {
+    this.queuedPomodoros = this.tasks
+      .filter((Task: Task) => Task.queued)
+      .reduce((pomodoros: number, queuedTask: Task) => {
+      return pomodoros + queuedTask.pomodorosRequired;
+    }, 0);
+  }
 };
