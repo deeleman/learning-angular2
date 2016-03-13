@@ -5,32 +5,33 @@ import { Task } from '../shared';
 
 @Injectable()
 export default class TaskService {
-  tasks: Observable<Array<Task>>;
-  public taskStore: Array<Task> = [];
-  private tasksObserver: any;
+  taskStore: Task[] = [];
+  taskFeed: Observable<Task>;
+  private taskObserver: any;
+  private dataUrl = '/app/shared/data/raw-tasks.json';
 
   constructor(public http: Http) {
-    this.tasks = new Observable(observer => {
-      this.tasksObserver = observer;
+    this.taskFeed = new Observable(observer => {
+      this.taskObserver = observer;
     });
-    this.loadTasks();
+    this.fetchTasks();
   }
 
-  loadTasks(): void {
-    this.http.get('/app/shared/data/raw-tasks.json')
+  private fetchTasks(): void {
+    this.http.get(this.dataUrl)
       .map(response => response.json())
       .map(stream => stream.map(res => {
         return {
           name: res.name,
           deadline: new Date(res.deadline),
           pomodorosRequired: res.pomodorosRequired,
-          queued: false
+          queued: res.queued
         }
       }))
       .subscribe(
         tasks => {
           this.taskStore = tasks;
-          this.tasksObserver.next(this.taskStore);
+          tasks.forEach(task => this.taskObserver.next(task))
         },
         error => console.log(error)
       );
@@ -38,6 +39,6 @@ export default class TaskService {
 
   addTask(task: Task): void {
     this.taskStore.push(task);
-    this.tasksObserver.next(this.taskStore);
+    this.taskObserver.next(task);
   }
 }

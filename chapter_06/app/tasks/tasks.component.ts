@@ -17,7 +17,7 @@ SHARED_PIPES
 })
 export default class TasksComponent implements OnInit {
   today: Date;
-  tasks: Task[];
+  tasks: Task[] = [];
   queuedPomodoros: number;
   queueHeaderMapping: any;
   timerMinutes: number;
@@ -33,10 +33,10 @@ export default class TasksComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.taskService.tasks.subscribe(updatedTasks => {
-      this.tasks = updatedTasks
+    this.taskService.taskFeed.subscribe(newTask => {
+      this.tasks.push(newTask);
+      this.updateQueuedPomodoros();
     });
-    this.updateQueuedPomodoros();
   }
 
   toggleTask(task: Task): void {
