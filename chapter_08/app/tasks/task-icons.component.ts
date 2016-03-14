@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from 'angular2/core';
-import { TaskModel } from '../shared/shared';
+import { Task } from '../shared/shared';
 
 @Component({
   selector: 'pomodoro-task-icons',
@@ -8,13 +8,12 @@ import { TaskModel } from '../shared/shared';
                   width="{{size}}">`
 })
 export default class TaskIconsComponent implements OnInit {
-  @Input() task: TaskModel;
+  @Input() task: Task;
   @Input() size: number;
   icons: Object[] = [];
 
   ngOnInit() {
-    for (let i = 0; i < this.task.pomodorosRequired; i++) {
-      this.icons.push({ name: this.task.name });
-    }
+    this.icons.length = this.task.pomodorosRequired;
+    this.icons.fill({ name: this.task.name });
   }
 }

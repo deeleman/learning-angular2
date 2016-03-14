@@ -1,13 +1,27 @@
 import { Injectable } from 'angular2/core';
-import LocalizationService from './localization.service';
 
 @Injectable()
 export default class SettingsService {
-    minutes: number;
-    labels: Object;
+  timerMinutes: number;
+  labelsMap: any;
+  pluralsMap: any;
 
-    constructor(localizationService: LocalizationService) {
-        this.minutes = 25;
-        this.labels = localizationService.getLocalizedLabels('en');
+  constructor() {
+    this.timerMinutes = 25;
+    this.labelsMap = {
+      'timer': {
+        'start': 'Start Timer',
+        'pause': 'Pause Timer',
+        'resume': 'Resume Countdown',
+        'other': 'Unknown'
+      }
+    };
+    this.pluralsMap = {
+      'tasks': {
+        '=0': 'No pomodoros',
+        '=1': 'One pomodoro',
+        'other': '# pomodoros'
+      }
     }
+  }
 }
