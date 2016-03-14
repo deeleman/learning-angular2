@@ -38,7 +38,6 @@ export default class TaskService {
   }
 
   addTask(task: Task): void {
-    this.taskStore.push(task);
     this.taskObserver.next(task);
   }
 }
