@@ -17,7 +17,7 @@ import {
 })
 export default class TasksComponent implements OnInit {
   today: Date;
-  tasks: Task[];
+  tasks: Task[] = [];
   queuedPomodoros: number;
   queueHeaderMapping: any;
   timerMinutes: number;

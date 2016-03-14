@@ -3,7 +3,7 @@ import { Task } from '../shared';
 
 @Injectable()
 export default class TaskService {
-  public taskStore: Array<Task> = [];
+  public taskStore: Task[] = [];
 
   constructor() {
     const tasks = [

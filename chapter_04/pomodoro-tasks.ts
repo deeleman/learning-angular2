@@ -20,7 +20,7 @@ interface Task {
 /// Local Data Service
 
 class TaskService {
-  public taskStore: Array<Task> = [];
+  public taskStore: Task[] = [];
 
   constructor() {
     const tasks = [
