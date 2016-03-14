@@ -2,10 +2,10 @@ import { Component, OnInit } from 'angular2/core';
 import TaskIconsComponent from './task-icons.component';
 import TaskTooltipDirective from './task-tooltip.directive';
 import {
-TaskService,
-SettingsService,
-Task,
-SHARED_PIPES
+  TaskService,
+  SettingsService,
+  Task,
+  SHARED_PIPES
 } from '../shared/shared';
 
 @Component({

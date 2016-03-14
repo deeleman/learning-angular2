@@ -10,7 +10,7 @@ export default class TaskService {
   private taskObserver: any;
   private dataUrl = '/app/shared/data/raw-tasks.json';
 
-  constructor(public http: Http) {
+  constructor(private http: Http) {
     this.taskFeed = new Observable(observer => {
       this.taskObserver = observer;
     });
