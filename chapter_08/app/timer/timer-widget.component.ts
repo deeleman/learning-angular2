@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from 'angular2/core';
+import { Component, OnInit } from 'angular2/core';
 import { RouteParams, CanReuse, OnReuse } from 'angular2/router';
 import { SettingsService, TaskService } from '../shared/shared';
 
@@ -16,7 +16,7 @@ import { SettingsService, TaskService } from '../shared/shared';
       </p>
     </div>`
 })
-export default class TimerWidgetComponent {
+export default class TimerWidgetComponent implements OnInit, CanReuse, OnReuse {
   minutes: number;
   seconds: number;
   isPaused: boolean;
