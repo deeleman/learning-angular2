@@ -1,28 +1,31 @@
-import Queueable from './models/queueable';
-import TaskModel from './models/task';
+import Queueable from './interfaces/queueable';
+import Task from './interfaces/task';
 
 import FormattedTimePipe from './pipes/formatted-time.pipe';
 import QueuedOnlyPipe from './pipes/queued-only.pipe';
 
-import LocalizationService from './services/localization.service';
 import SettingsService from './services/settings.service';
 import TaskService from './services/task.service';
 
-const POMODORO_PROVIDERS: any[] = [
-  LocalizationService,
+const SHARED_PIPES: any[] = [
+  FormattedTimePipe,
+  QueuedOnlyPipe
+];
+
+const SHARED_PROVIDERS: any[] = [
   SettingsService,
   TaskService
 ];
 
 export {
   Queueable,
-  TaskModel,
+  Task,
 
   FormattedTimePipe,
   QueuedOnlyPipe,
+  SHARED_PIPES,
 
-  LocalizationService,
   SettingsService,
   TaskService,
-  POMODORO_PROVIDERS
+  SHARED_PROVIDERS
 };

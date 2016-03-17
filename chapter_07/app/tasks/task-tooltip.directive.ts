@@ -1,4 +1,4 @@
-import { TaskModel } from '../shared/shared';
+import { Task } from '../shared/shared';
 import { Input, Directive, HostListener } from 'angular2/core';
 
 @Directive({
@@ -6,7 +6,7 @@ import { Input, Directive, HostListener } from 'angular2/core';
 })
 export default class TaskTooltipDirective {
   private defaultTooltipText: string;
-  @Input() task: TaskModel;
+  @Input() task: Task;
   @Input() taskTooltip: any;
 
   @HostListener('mouseover')
@@ -16,6 +16,7 @@ export default class TaskTooltipDirective {
     }
     this.taskTooltip.innerText = this.task.name;
   }
+  
   @HostListener('mouseout')
   onMouseOut() {
     if(this.taskTooltip) {
