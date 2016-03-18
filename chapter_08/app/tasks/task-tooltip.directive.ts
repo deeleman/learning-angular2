@@ -16,6 +16,7 @@ export default class TaskTooltipDirective {
     }
     this.taskTooltip.innerText = this.task.name;
   }
+
   @HostListener('mouseout')
   onMouseOut() {
     if(this.taskTooltip) {
