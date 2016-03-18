@@ -1,5 +1,5 @@
 interface Queueable {
-    queued: boolean;
+  queued: boolean;
 }
 
 export default Queueable;

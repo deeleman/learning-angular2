@@ -1,33 +1,32 @@
-import { Component, Input, OnInit, ElementRef } from 'angular2/core';
+import { Component, OnInit, ElementRef } from 'angular2/core';
 import { RouteParams, CanReuse, OnReuse } from 'angular2/router';
-import { TaskModel, TaskService, SettingsService } from '../shared/shared';
+import { SettingsService, TaskService } from '../shared/shared';
 import { AnimationBuilder } from 'angular2/src/animate/animation_builder';
 import { CssAnimationBuilder } from 'angular2/src/animate/css_animation_builder';
 
 @Component({
   selector: 'pomodoro-timer-widget',
-  providers: [AnimationBuilder],
   styleUrls: ['app/timer/timer-widget.component.css'],
   template: `
-        <div class="text-center">
-            <img src="/app/shared/assets/img/pomodoro.png"
-                [ngClass]="{ pulse: !isPaused }"
-                alt="Pomodoro">
-            <h3><small>{{ taskName }}</small></h3>
-            <h1> {{ minutes }}:{{ seconds  | number: '2.0' }} </h1>
-            <p>
-                <button (click)="togglePause()" class="btn btn-danger">
-                {{ buttonLabel }}
-                </button>
-            </p>
-        </div>
-    `
+    <div class="text-center">
+      <img src="/app/shared/assets/img/pomodoro.png"
+        [ngClass]="{ pulse: !isPaused }"
+        alt="Pomodoro">
+      <h3><small>{{ taskName }}</small></h3>
+      <h1> {{ minutes }}:{{ seconds  | number: '2.0' }} </h1>
+      <p>
+        <button (click)="togglePause()" class="btn btn-danger">
+        {{ buttonLabelKey | i18nSelect: buttonLabelsMap }}
+        </button>
+      </p>
+    </div>`
 })
 export default class TimerWidgetComponent implements OnInit, CanReuse, OnReuse {
   minutes: number;
   seconds: number;
   isPaused: boolean;
-  buttonLabel: string;
+  buttonLabelKey: string;
+  buttonLabelsMap: any;
   taskName: string;
   fadeInAnimationBuilder: CssAnimationBuilder;
 
@@ -37,11 +36,13 @@ export default class TimerWidgetComponent implements OnInit, CanReuse, OnReuse {
     private taskService: TaskService,
     private animationBuilder: AnimationBuilder,
     private elementRef: ElementRef) {
-    this.fadeInAnimationBuilder = animationBuilder.css();
-    this.fadeInAnimationBuilder.setDuration(1000)
-      .setDelay(300)
-      .setFromStyles({ opacity: 0 })
-      .setToStyles({ opacity: 1 });
+      this.buttonLabelsMap = settingsService.labelsMap.timer;
+
+      this.fadeInAnimationBuilder = animationBuilder.css();
+      this.fadeInAnimationBuilder.setDuration(1000)
+        .setDelay(300)
+        .setFromStyles({ opacity: 0 })
+        .setToStyles({ opacity: 1 });
   }
 
   ngOnInit(): void {
@@ -54,7 +55,9 @@ export default class TimerWidgetComponent implements OnInit, CanReuse, OnReuse {
     }
 
     let animation = this.fadeInAnimationBuilder.start(
-      this.elementRef.nativeElement.firstElementChild);
+      this.elementRef
+      .nativeElement
+      .firstElementChild);
 
     animation.onComplete(() => console.log('Animation completed!'));
   }
@@ -65,14 +68,14 @@ export default class TimerWidgetComponent implements OnInit, CanReuse, OnReuse {
 
   resetPomodoro(): void {
     this.isPaused = true;
-    this.minutes = this.settingsService.minutes - 1;
+    this.minutes = this.settingsService.timerMinutes - 1;
     this.seconds = 59;
-    this.buttonLabel = this.settingsService.labels['start'];
+    this.buttonLabelKey = 'start';
   }
 
   private tick(): void {
     if (!this.isPaused) {
-      this.buttonLabel = this.settingsService.labels['pause'];
+      this.buttonLabelKey = 'pause';
 
       if (--this.seconds < 0) {
         this.seconds = 59;
@@ -85,9 +88,8 @@ export default class TimerWidgetComponent implements OnInit, CanReuse, OnReuse {
 
   togglePause(): void {
     this.isPaused = !this.isPaused;
-    if (this.minutes < this.settingsService.minutes || this.seconds < 59) {
-      let buttonLabelKey = this.isPaused ? 'resume' : 'pause';
-      this.buttonLabel = this.settingsService.labels[buttonLabelKey];
+    if (this.minutes < this.settingsService.timerMinutes || this.seconds < 59) {
+      this.buttonLabelKey = this.isPaused ? 'resume' : 'pause';
     }
   }
 
