@@ -1,9 +1,9 @@
 import { Component } from 'angular2/core';
-import { TimerComponent } from './timer/timer';
-import { TasksComponent, TaskEditorComponent } from './tasks/tasks';
 import { SHARED_PROVIDERS, SHARED_DIRECTIVES, AuthenticationService } from './shared/shared';
 import { HTTP_PROVIDERS } from 'angular2/http';
-import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, Router } from 'angular2/router';
+import { ROUTER_PROVIDERS, RouteConfig, ROUTER_DIRECTIVES, Router } from 'angular2/router';
+import { TimerComponent } from './timer/timer';
+import { TasksComponent, TaskEditorComponent } from './tasks/tasks';
 import { FORM_PROVIDERS } from 'angular2/common';
 import { LoginComponent } from './login/login';
 
@@ -17,31 +17,14 @@ import { LoginComponent } from './login/login';
           border-bottom: 2px #d9534f solid;
       }
   `],
-  template: `
-  <nav class="navbar navbar-default navbar-static-top">
-    <div class="container">
-      <div class="navbar-header">
-        <strong class="navbar-brand">My Pomodoro App</strong>
-      </div>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a [routerLink]="['TasksComponent']">Tasks</a></li>
-        <li><a [routerLink]="['TimerComponent']">Timer</a></li>
-        <li *ngIf="!userIsLogged"><a [routerLink]="['LoginComponent']">Login</a></li>
-        <li *ngIf="userIsLogged"><a [routerLink]="['TaskEditorComponent']">Publish Task</a></li>
-        <li *ngIf="userIsLogged"><a href="#" (click)="logout($event)">Logout</a></li>
-      </ul>
-    </div>
-  </nav>
-  <pomodoro-router-outlet protectedPath="tasks/editor" loginUrl="login">
-  </pomodoro-router-outlet>
-  `
+  templateUrl: 'app/app.component.html'
 })
 @RouteConfig([
-  { path: '', name: 'Home', redirectTo: ['TasksComponent'] },
-  { path: 'tasks', name: 'TasksComponent', component: TasksComponent, useAsDefault: true },
-  { path: 'tasks/editor', name: 'TaskEditorComponent', component: TaskEditorComponent },
-  { path: 'timer/...', name: 'TimerComponent', component: TimerComponent },
-  { path: 'login', name: 'LoginComponent', component: LoginComponent }
+  { path: '',             name: 'Home',                 redirectTo: ['TasksComponent'] },
+  { path: 'tasks',        name: 'TasksComponent',       component: TasksComponent, useAsDefault: true },
+  { path: 'tasks/editor', name: 'TaskEditorComponent',  component: TaskEditorComponent },
+  { path: 'timer/...',    name: 'TimerComponent',       component: TimerComponent },
+  { path: 'login',        name: 'LoginComponent',       component: LoginComponent }
 ])
 export default class AppComponent {
   userIsLogged: boolean;

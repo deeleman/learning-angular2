@@ -18,7 +18,7 @@ import { TasksComponent, TaskEditorComponent } from './tasks/tasks';
   templateUrl: 'app/app.component.html'
 })
 @RouteConfig([
-  { path: '',               name: 'Home', redirectTo: ['TasksComponent'] },
+  { path: '',               name: 'Home',                 redirectTo: ['TasksComponent'] },
   { path: 'tasks',          name: 'TasksComponent',       component: TasksComponent, useAsDefault: true },
   { path: 'tasks/editor',   name: 'TaskEditorComponent',  component: TaskEditorComponent },
   { path: 'timer/...',      name: 'TimerComponent',       component: TimerComponent }
