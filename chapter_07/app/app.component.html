@@ -1,0 +1,14 @@
+<nav class="navbar navbar-default navbar-static-top">
+  <div class="container">
+    <div class="navbar-header">
+      <strong class="navbar-brand">My Pomodoro App</strong>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a [routerLink]="['TasksComponent']">Tasks</a></li>
+      <li><a [routerLink]="['TimerComponent']">Timer</a></li>
+      <li><a [routerLink]="['TaskEditorComponent']">Publish Task</a></li>
+    </ul>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from 'angular2/core';
-import { RouteParams, CanReuse, OnReuse } from 'angular2/router';
 import { SettingsService, TaskService } from '../shared/shared';
+import { RouteParams, CanReuse, OnReuse } from 'angular2/router';
 
 @Component({
   selector: 'pomodoro-timer-widget',
@@ -37,12 +37,8 @@ export default class TimerWidgetComponent implements OnInit, CanReuse, OnReuse {
 
     let taskIndex = parseInt(this.routeParams.get('id'));
     if (!isNaN(taskIndex)) {
-      this.loadTaskName(taskIndex);
+      this.taskName = this.taskService.taskStore[taskIndex].name;
     }
-  }
-
-  private loadTaskName(index: number): void {
-    this.taskName = this.taskService.taskStore[index].name;
   }
 
   resetPomodoro(): void {
