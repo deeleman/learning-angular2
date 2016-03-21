@@ -2,10 +2,10 @@ import { Injectable, EventEmitter } from 'angular2/core';
 
 @Injectable()
 export default class AuthenticationService {
-  userLoggedInStatus: EventEmitter<boolean>;
+  userIsloggedIn: EventEmitter<boolean>;
 
   constructor() {
-    this.userLoggedInStatus = new EventEmitter();
+    this.userIsloggedIn = new EventEmitter();
   }
 
   login({ username, password }): Promise<boolean> {
@@ -21,7 +21,7 @@ export default class AuthenticationService {
         window.sessionStorage.setItem('token', 'eyJhbGciOi');
       }
 
-      this.userLoggedInStatus.emit(validCredentials);
+      this.userIsloggedIn.emit(validCredentials);
       resolve(validCredentials);
     });
   }
@@ -29,12 +29,12 @@ export default class AuthenticationService {
   logout(): Promise<boolean> {
     return new Promise(resolve => {
       window.sessionStorage.removeItem('token');
-      this.userLoggedInStatus.emit(false);
+      this.userIsloggedIn.emit(false);
       resolve(true);
     });
   }
 
-  static grantAccess(): boolean {
+  static isAuthorized(): boolean {
     return !!window.sessionStorage.getItem('token');
   }
 }

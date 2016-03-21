@@ -21,7 +21,7 @@ import { Task, TaskService, AuthenticationService } from '../shared/shared';
         .ng-untouched { border-color: #999999; }
     `]
 })
-//@CanActivate(AuthService.grantAccess) // NOTE: Refer to book for details on commented code
+//@CanActivate(AuthenticationService.isAuthorized) // NOTE: Refer to book for details on commented code
 export default class TaskEditorComponent implements OnActivate, CanDeactivate, OnDeactivate {
   task: Task;
   changesSaved: boolean;
@@ -47,7 +47,7 @@ export default class TaskEditorComponent implements OnActivate, CanDeactivate, O
   routerCanDeactivate(next: ComponentInstruction, prev: ComponentInstruction) {
     // NOTE: Refer to book for details on commented code
     //return this.changesSaved || confirm('Are you sure you want to leave?');
-    return !AuthenticationService.grantAccess() ||
+    return !AuthenticationService.isAuthorized() ||
       this.changesSaved ||
       confirm('Are you sure you want to leave?');
   }

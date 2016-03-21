@@ -9,7 +9,7 @@ import { AuthenticationService } from '../shared/shared';
 })
 export default class LoginComponent {
   loginForm: ControlGroup;
-  showAlert: boolean = false;
+  notValidCredentials: boolean = false;
   showUsernameHint: boolean = false;
 
   constructor(
@@ -17,7 +17,7 @@ export default class LoginComponent {
     private router: Router,
     private authenticationService: AuthenticationService) {
     this.loginForm = formBuilder.group({
-      username: ['', Validators.compose([Validators.required, this.usernameValidator])],
+      username: ['', Validators.compose([Validators.required, this.emailValidator])],
       password: ['', Validators.required]
     });
 
@@ -28,7 +28,7 @@ export default class LoginComponent {
 
   }
 
-  private usernameValidator(control: Control): { [key: string]: boolean } {
+  private emailValidator(control: Control): { [key: string]: boolean } {
     if (!/(.+)@(.+){2,}\.(.+){2,}/.test(control.value)) {
       return {
         'emailNotValid': true
@@ -39,14 +39,14 @@ export default class LoginComponent {
   }
 
   authenticate() {
-    this.showAlert = !this.loginForm.valid && this.loginForm.dirty;
     let credentials: any = this.loginForm.value;
+    this.notValidCredentials = !this.loginForm.valid && this.loginForm.dirty;
 
     this.authenticationService.login(credentials).then(success => {
       if (success) {
         this.router.navigateByUrl('/');
       } else {
-        this.showAlert = true;
+        this.notValidCredentials = true;
       }
     });
   }

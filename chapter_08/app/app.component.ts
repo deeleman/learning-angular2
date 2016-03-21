@@ -10,7 +10,11 @@ import { LoginComponent } from './login/login';
 @Component({
   selector: 'pomodoro-app',
   directives: [ROUTER_DIRECTIVES, SHARED_DIRECTIVES],
-  providers: [SHARED_PROVIDERS, HTTP_PROVIDERS, ROUTER_PROVIDERS, FORM_PROVIDERS],
+  providers: [
+    SHARED_PROVIDERS,
+    HTTP_PROVIDERS,
+    ROUTER_PROVIDERS,
+    FORM_PROVIDERS],
   styles: [`
       .router-link-active {
           font-weight: bold;
@@ -27,13 +31,13 @@ import { LoginComponent } from './login/login';
   { path: 'login',        name: 'LoginComponent',       component: LoginComponent }
 ])
 export default class AppComponent {
-  userIsLogged: boolean;
+  userIsLoggedIn: boolean;
 
   constructor(
     private authenticationService: AuthenticationService,
     private router: Router) {
-    authenticationService.userLoggedInStatus.subscribe(userIsloggedIn => {
-      this.userIsLogged = userIsloggedIn;
+    authenticationService.userIsloggedIn.subscribe(isLoggedIn => {
+      this.userIsLoggedIn = isLoggedIn;
     });
   }
 

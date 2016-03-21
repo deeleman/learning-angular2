@@ -12,10 +12,10 @@ import { AnimationBuilder } from 'angular2/src/animate/animation_builder';
   selector: 'pomodoro-app',
   directives: [ROUTER_DIRECTIVES, SHARED_DIRECTIVES],
   providers: [
-    ROUTER_PROVIDERS,
-    HTTP_PROVIDERS,
-    FORM_PROVIDERS,
     SHARED_PROVIDERS,
+    HTTP_PROVIDERS,
+    ROUTER_PROVIDERS,
+    FORM_PROVIDERS,
     AnimationBuilder
   ],
   styles: [`
@@ -34,13 +34,13 @@ import { AnimationBuilder } from 'angular2/src/animate/animation_builder';
   { path: 'login',        name: 'LoginComponent',       component: LoginComponent }
 ])
 export default class AppComponent {
-  userIsLogged: boolean;
+  userIsLoggedIn: boolean;
 
   constructor(
     private authenticationService: AuthenticationService,
     private router: Router) {
-    authenticationService.userLoggedInStatus.subscribe(userIsloggedIn => {
-      this.userIsLogged = userIsloggedIn;
+    authenticationService.userIsloggedIn.subscribe(userIsloggedIn => {
+      this.userIsLoggedIn = userIsloggedIn;
     });
   }
 

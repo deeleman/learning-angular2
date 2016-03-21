@@ -1,7 +1,7 @@
 /* Inspired by Animate.css - https://daneden.github.io/animate.css/ */
 
 @keyframes pulse {
-  from {
+  0% {
     transform: scale3d(1, 1, 1);
   }
 
@@ -9,7 +9,7 @@
     transform: scale3d(1.1, 1.1, 1.1);
   }
 
-  to {
+  100% {
     transform: scale3d(1, 1, 1);
   }
 }

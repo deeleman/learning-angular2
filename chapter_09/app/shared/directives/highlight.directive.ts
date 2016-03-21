@@ -4,6 +4,7 @@ import { CssAnimationBuilder } from 'angular2/src/animate/css_animation_builder'
 
 @Directive({
   selector: '.pomodoro-highlight',
+  providers: [AnimationBuilder],
   exportAs: 'pomodoroHighlight'
 })
 export default class HighlightDirective {
@@ -21,7 +22,7 @@ export default class HighlightDirective {
   colorize() {
     let animation = this.cssAnimationBuilder.start(
       this.elementRef.nativeElement
-      );
+    );
 
     animation.onComplete(() => {
       animation.applyStyles({ backgroundColor: 'inherit' });

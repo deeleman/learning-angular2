@@ -37,12 +37,8 @@ export default class TimerWidgetComponent implements OnInit, CanReuse, OnReuse {
 
     let taskIndex = parseInt(this.routeParams.get('id'));
     if (!isNaN(taskIndex)) {
-      this.loadTaskName(taskIndex);
+      this.taskName = this.taskService.taskStore[taskIndex].name;
     }
-  }
-
-  private loadTaskName(index: number): void {
-    this.taskName = this.taskService.taskStore[index].name;
   }
 
   resetPomodoro(): void {
