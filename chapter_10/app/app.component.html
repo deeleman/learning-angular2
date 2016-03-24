@@ -1,0 +1,16 @@
+<nav class="navbar navbar-default navbar-static-top">
+  <div class="container">
+    <div class="navbar-header">
+      <strong class="navbar-brand">My Pomodoro App</strong>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a [routerLink]="['TasksComponent']">Tasks</a></li>
+      <li><a [routerLink]="['TimerComponent']">Timer</a></li>
+      <li><a [routerLink]="['TaskEditorComponent']">Publish Task</a></li>
+      <li *ngIf="!userIsLoggedIn"><a [routerLink]="['LoginComponent']">Login</a></li>
+      <li *ngIf="userIsLoggedIn"><a href="#" (click)="logout($event)">Logout</a></li>
+    </ul>
+  </div>
+</nav>
+<pomodoro-router-outlet protectedPath="tasks/editor" loginUrl="login">
+</pomodoro-router-outlet>

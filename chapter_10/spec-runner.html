@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title>Pomodoro App Unit Tests</title>
+
+    <link rel="stylesheet" href="node_modules/jasmine-core/lib/jasmine-core/jasmine.css">
+    <script src="node_modules/jasmine-core/lib/jasmine-core/jasmine.js"></script>
+    <script src="node_modules/jasmine-core/lib/jasmine-core/jasmine-html.js"></script>
+    <script src="node_modules/jasmine-core/lib/jasmine-core/boot.js"></script>
+
+    <script src="node_modules/systemjs/dist/system.js"></script>
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="node_modules/angular2/bundles/angular2.js"></script>
+    <script src="node_modules/angular2/bundles/http.js"></script>
+    <script src="node_modules/angular2/bundles/router.js"></script>
+    <script src="node_modules/angular2/bundles/testing.dev.js"></script>
+  </head>
+  <body>
+    <script>
+      // Your typescript compiler outDir parameter value
+      var outDir = 'built';
+
+      // Enlist your specs in the following spec collection array
+      var specCollection = [
+        'test/setup',
+        'app/shared/pipes/formatted-time.pipe.spec',
+        'app/tasks/task-icons.component.spec',
+        'app/shared/services/authentication.service.spec',
+        'app/timer/timer-widget.component.spec',
+        'app/app.component.spec',
+        'app/shared/services/settings.service.spec',
+        'app/tasks/task-tooltip.directive.spec'
+      ];
+
+      // SystemJS setup
+      System.config({packages: { [outDir]: { defaultExtension: 'js' }}});
+
+      // We load all specs asyncronously and evaluate their output at once
+      Promise.all(specCollection.map(spec => System.import(`${outDir}/${spec}`)))
+      .then(window.onload)
+      .catch(console.error.bind(console));
+    </script>
+  </body>
+</html>

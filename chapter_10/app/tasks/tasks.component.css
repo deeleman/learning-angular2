@@ -1,0 +1,16 @@
+h3, p {
+  text-align: center;
+}
+.table {
+  margin: auto;
+  max-width: 860px;
+}
+.ng-animate {
+  transition: all 0.3s ease-in;
+}
+.ng-enter {
+  opacity: 0;
+}
+.ng-enter-active {
+  opacity: 1;
+}

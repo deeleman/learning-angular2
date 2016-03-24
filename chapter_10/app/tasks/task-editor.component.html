@@ -1,0 +1,49 @@
+<form class="container" (ngSubmit)="saveTask($event)">
+  <h3>Task Editor:</h3>
+  <div class="form-group">
+    <p class="text-muted" *ngIf="name.untouched">
+      Start here by entering the task name.
+    </p>
+    <p class="text-success" *ngIf="name.valid && name.touched">
+      Well done! That's a good name for a task!
+    </p>
+    <p class="text-danger" *ngIf="!name.valid && name.touched">
+      Oops! You cannot leave the name blank...
+    </p>
+    <input type="text"
+      class="form-control"
+      placeholder="Task name"
+      [(ngModel)]="task.name"
+      #name="ngForm"
+      required>
+  </div>
+
+  <div class="form-group">
+    <input type="Date"
+      class="form-control"
+      [(ngModel)]="task.deadline"
+      required>
+  </div>
+
+  <div class="form-group">
+    <input type="number"
+      class="form-control"
+      placeholder="Pomodoros required"
+      min="1"
+      max="4"
+      [(ngModel)]="task.pomodorosRequired"
+      required>
+  </div>
+
+  <div class="form-group">
+    <input type="checkbox"
+      name="queued"
+      [(ngModel)]="task.queued">
+    <label for="queued">Queue this task by default?</label>
+  </div>
+
+  <p>
+    <input type="submit" class="btn btn-success" value="Save">
+    <a [routerLink]="['TasksComponent']" class="btn btn-danger">Cancel</a>
+  </p>
+</form>
