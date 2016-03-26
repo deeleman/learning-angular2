@@ -6,7 +6,7 @@ Welcome to the GIT repository for the code samples included in the book. The cod
 
 ## About this book
 
-The first and best overview of Angular 2 on the market—this guide gathers together everything there is to know about Angular 2 and groups it in intuitive sections. No hunting through confusing documentation or scrambling piecemeal to figure out how things work together; this book is your detailed map of every feature and its use cases.
+The most ambitious overview of Angular 2 on the market up to now—this guide gathers together everything there is to know about Angular 2 and groups it in intuitive sections. No hunting through confusing documentation or scrambling piecemeal to figure out how things work together; this book is your detailed map of every feature and its use cases.
 
 The author has done all the hard work of fitting everything Angular 2 means for developers together for you, making this book the quickest way to learn Angular 2 from scratch. This is an inexpensive, yet invaluable addition to every Angular user's toolkit to refer back to time and again. It's great for newcomers to Angular who will learn best through clear explanations and definitions of concepts.
 
@@ -27,7 +27,7 @@ At this time these are the code samples published so far:
 * [Chapter 7 - Routing in Angular 2](https://github.com/deeleman/angular2-essentials/tree/master/chapter_07)
 * [Chapter 8 - Forms and Authentication handling in Angular 2](https://github.com/deeleman/angular2-essentials/tree/master/chapter_08)
 * [Chapter 9 - Animating components with Angular 2](https://github.com/deeleman/angular2-essentials/tree/master/chapter_09)
-* Chapter 10 - Unit Testing Angular 2 applications (coming soon)
+* [Chapter 10 - Unit Testing Angular 2 applications](https://github.com/deeleman/angular2-essentials/tree/master/chapter_10)
 
 ### What do you need to run the examples?
 
@@ -37,7 +37,7 @@ You will want to have a local web server pointing to the example folder you want
 
 ### Disclaimer
 
-While the book is still in Alpha state and the Angular 2 project keeps moving forward, breaking changes in the codebase may affect the reliability of the code examples provided.
+While the Angular 2 project keeps moving forward and has not a stable version, breaking changes in the codebase may affect the reliability of the code examples provided.
 
 The author will do its best to keep the code samples provided as up-to-date as possible, but we understand that you may encounter outdated snippets or missing scripts. Please post your enquiries in the [issues page](https://github.com/deeleman/angular2-essentials/issues) should you require further assistance.
 

@@ -13,7 +13,7 @@ $ cd angular2-essentials/chapter_04
 $ npm install
 ```
 
-An `npm postinstall` hook will manage the installation of the typings required for compiling the project. You can run `npm start` once finished to trigger the TypeScript transpiling and spawn a local server in your machine already pointing to the chapter folder.
+An `npm postinstall` hook will manage the installation of the typings required for compiling the project. You can run `npm start` once finished to trigger the TypeScript transpiling and fire a local server in your machine already pointing to the chapter folder.
 
 ## Description
 
