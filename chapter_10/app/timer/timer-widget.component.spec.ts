@@ -27,9 +27,11 @@ describe('timer:TimerWidgetComponent', () => {
   beforeEachProviders(() => [
     TestComponentBuilder,
     SettingsService,
+    TaskService,
+
     // RouteParams is instantiated with custom values upon injecting
     provide(RouteParams, { useValue: new RouteParams({ id: null }) }),
-    TaskService,
+
     MockBackend,
     BaseRequestOptions,
     // We override the default Http provider implementation
@@ -43,7 +45,8 @@ describe('timer:TimerWidgetComponent', () => {
   ]);
 
   // We reinstantiate the fixture component builder before each test
-  beforeEach(inject([TestComponentBuilder], (_testComponentBuilder: TestComponentBuilder) => {
+  beforeEach(inject([TestComponentBuilder],
+    (_testComponentBuilder: TestComponentBuilder) => {
       testComponentBuilder = _testComponentBuilder;
     }
   ));
@@ -67,23 +70,28 @@ describe('timer:TimerWidgetComponent', () => {
       expect(timerWidgetComponent.minutes).toEqual(24);
       expect(timerWidgetComponent.seconds).toEqual(59);
 
+      componentFixture.destroy();
       done(); // Resolve async text
     })
       .catch(e => done.fail(e));
   });
 
-  it('should initialize as paused displaying with the default labels', done => {
+  it('should initialize as paused displaying the default labels', done => {
     testComponentBuilder
     .createAsync(TimerWidgetComponent)
     .then(componentFixture => {
       componentFixture.componentInstance.ngOnInit();
       componentFixture.detectChanges();
 
-      expect(componentFixture.componentInstance.buttonLabelKey).toEqual('start');
+      expect(componentFixture.componentInstance.buttonLabelKey)
+        .toEqual('start');
+
       expect(componentFixture.nativeElement
         .querySelector('button')
-        .innerHTML.trim()).toEqual('Start Timer');
+        .innerHTML.trim())
+        .toEqual('Start Timer');
 
+      componentFixture.destroy();
       done();
     })
       .catch(e => done.fail(e));
@@ -115,6 +123,7 @@ describe('timer:TimerWidgetComponent', () => {
       expect(componentFixture.componentInstance.taskName).toEqual('Task B');
       expect(componentFixture.nativeElement.querySelector('small')).toHaveText('Task B');
 
+      componentFixture.destroy();
       done();
     })
     .catch(e => done.fail(e));

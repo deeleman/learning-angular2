@@ -3,18 +3,16 @@ import {
   describe,
   expect,
   it,
-  xit,
   inject,
   beforeEach,
-  beforeEachProviders,
-  TestComponentBuilder } from 'angular2/testing';
+  beforeEachProviders } from 'angular2/testing';
 
 describe('shared:SettingsService', () => {
   let settingsService: SettingsService;
 
   beforeEachProviders(() => [SettingsService]);
 
-  beforeEach(inject([SettingsService], (_settingsService) => {
+  beforeEach(inject([SettingsService], (_settingsService: SettingsService) => {
     settingsService = _settingsService;
   }));
 

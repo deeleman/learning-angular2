@@ -3,7 +3,6 @@ import {
   describe,
   expect,
   it,
-  xit,
   inject,
   beforeEach,
   beforeEachProviders,
@@ -15,8 +14,7 @@ describe('tasks:TaskIconsComponent', () => {
   // First we setup the injector with providers for our component
   // and for a fixture component builder
   beforeEachProviders(() => [
-    TestComponentBuilder,
-    TaskIconsComponent
+    TestComponentBuilder
   ]);
 
   // We reinstantiate the fixture component builder before each test
@@ -30,20 +28,23 @@ describe('tasks:TaskIconsComponent', () => {
   // Specs with assertions
   it('should render 1 image for each pomodoro session required', done => {
     // We create a test component fixture on runtime out from the component symbol
-    return testComponentBuilder
+    testComponentBuilder
     .createAsync(TaskIconsComponent)
     .then(componentFixture => {
       // We fetch instances of the component and the rendered DOM
       let taskIconsComponent = componentFixture.componentInstance;
       let nativeElement = componentFixture.nativeElement;
 
-      // We set a value to the @Input property and trigger change detection
+      // We set a test value to the @Input property and trigger change detection
       taskIconsComponent.task = { pomodorosRequired: 3 };
       componentFixture.detectChanges();
 
       // these assertions evaluate the component's surface DOM
       expect(nativeElement.querySelectorAll('img').length).toBe(3);
-      done(); // Resolve async text
+
+      // We finally destroy the component fixture and resolve the async test
+      componentFixture.destroy();
+      done();
     })
     .catch(e => done.fail(e));
   });
@@ -53,12 +54,18 @@ describe('tasks:TaskIconsComponent', () => {
     .then(componentFixture => {
       let taskIconsComponent = componentFixture.componentInstance;
       let nativeElement = componentFixture.nativeElement;
+      let actualWidth;
 
       taskIconsComponent.task = { pomodorosRequired: 2 };
       taskIconsComponent.size = 60;
       componentFixture.detectChanges();
 
-      expect(nativeElement.querySelector('img').getAttribute('width')).toBe('60');
+      actualWidth = nativeElement
+        .querySelector('img')
+        .getAttribute('width');
+
+      expect(actualWidth).toBe('60');
+      componentFixture.destroy();
       done();
     })
     .catch(e => done.fail(e));

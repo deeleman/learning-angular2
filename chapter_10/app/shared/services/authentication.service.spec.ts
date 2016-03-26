@@ -4,11 +4,14 @@ import {
   describe,
   expect,
   it,
-  xit,
   inject,
   beforeEach,
   beforeEachProviders } from 'angular2/testing';
-import { Http, BaseRequestOptions, Response, ResponseOptions }  from 'angular2/http';
+import {
+  Http,
+  BaseRequestOptions,
+  Response,
+  ResponseOptions }  from 'angular2/http';
 import { MockBackend, MockConnection } from 'angular2/http/testing';
 import 'rxjs/add/operator/map';
 
@@ -20,7 +23,10 @@ describe('shared:AuthenticationService', () => {
     MockBackend,
     BaseRequestOptions,
     provide(Http, {
-      useFactory: (backend: MockBackend, options: BaseRequestOptions) => {
+      useFactory: (
+        backend: MockBackend,
+        options: BaseRequestOptions
+      ) => {
         return new Http(backend, options);
       },
       deps: [MockBackend, BaseRequestOptions]
@@ -28,20 +34,31 @@ describe('shared:AuthenticationService', () => {
     AuthenticationService
   ]);
 
-  beforeEach(inject([MockBackend, AuthenticationService], (_mockBackend, _authenticationService) => {
-    authenticationService = _authenticationService;
-    mockBackend = _mockBackend;
-  }));
+  beforeEach(inject(
+    [MockBackend, AuthenticationService],
+    (_mockBackend, _authenticationService) => {
+      authenticationService = _authenticationService;
+      mockBackend = _mockBackend;
+    }
+  ));
 
   it('should retrieve a valid token when querying the Auth API', done => {
-    const mockedResponse = new ResponseOptions({ body: '{"token": "eyJhbGciOi"}' });
-    mockBackend.connections.subscribe((connection: MockConnection) => {
-      if(connection.request.url === '/api/authentication') {
-        connection.mockRespond(new Response(mockedResponse));
-      }
+    const mockedResponse = new ResponseOptions({
+      body: '{"token": "eyJhbGciOi"}'
     });
 
-    authenticationService.httpLogin({ username: 'foo', password: 'bar'}).then(
+    mockBackend.connections.subscribe(
+      (connection: MockConnection) => {
+        if(connection.request.url === '/api/authentication') {
+          connection.mockRespond(new Response(mockedResponse));
+        }
+      }
+    );
+
+    authenticationService.httpLogin({
+      username: 'foo',
+      password: 'bar'}
+    ).then(
       success => {
         expect(success).toBeTruthy();
         done();
@@ -60,21 +77,34 @@ describe('shared:AuthenticationService', () => {
     );
   });
 
-  describe('should emit an event when the user auth status changes', () => {
-    it('that should be truthy when the authentication is successful', done => {
-        authenticationService.userIsloggedIn.subscribe((authStatus: boolean) => {
+  describe('emits an event when the user auth status changes', () => {
+
+    it('that should be truthy for successful authentications', done => {
+        authenticationService
+        .userIsloggedIn
+        .subscribe((authStatus: boolean) => {
           expect(authStatus).toBeTruthy();
           done();
         });
-        authenticationService.login({ username: 'john.doe@mail.com', password: 'letmein'});
+
+        authenticationService.login({
+          username: 'john.doe@mail.com',
+          password: 'letmein'
+        });
     });
 
-    it('that should be falsy when the authentication failed', done => {
-        authenticationService.userIsloggedIn.subscribe((authStatus: boolean) => {
+    it('that should be falsy for failed authentications', done => {
+        authenticationService
+        .userIsloggedIn
+        .subscribe((authStatus: boolean) => {
           expect(authStatus).toBeFalsy();
           done();
         });
-        authenticationService.login({ username: 'foo', password: 'bar'});
+
+        authenticationService.login({
+          username: 'foo',
+          password: 'bar'
+        });
     });
   });
 

@@ -16,6 +16,7 @@ export default class AuthenticationService {
       // @NOTE: In a normal case scenario this check should
       // be performed against a web service, which would return
       // the session token upon validating the user successfully
+      // Please refer to {@link httpLogin()}.
       if (username === 'john.doe@mail.com' &&
         password === 'letmein') {
         validCredentials = true;
@@ -29,19 +30,22 @@ export default class AuthenticationService {
 
   httpLogin(credentials): Promise<boolean> {
     return new Promise(resolve => {
-      let validCredentials: boolean = false;
 
-      let body = JSON.stringify(credentials);
-      let headers = new Headers({ 'Content-Type': 'application/json' });
-      let options = new RequestOptions({ headers: headers });
+      const url = '/api/authentication'; // Or your own API Auth url
+      const body = JSON.stringify(credentials);
+      const headers = new Headers({ 'Content-Type': 'application/json' });
+      const options = new RequestOptions({ headers: headers });
 
-      this.http.post('/api/authentication', body, options)
+      this.http.post(url, body, options)
         .map(response => response.json())
         .subscribe(authResponse => {
+            let validCredentials: boolean = false;
+
             if(authResponse && authResponse.token) {
               validCredentials = true;
               window.sessionStorage.setItem('token', authResponse.token);
             }
+
             this.userIsloggedIn.emit(validCredentials);
             resolve(validCredentials);
           },

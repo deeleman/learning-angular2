@@ -4,23 +4,15 @@ import {
   describe,
   expect,
   it,
-  xit,
-  inject,
-  beforeEach,
-  beforeEachProviders,
-  fakeAsync,
-  tick,
-  TestComponentBuilder } from 'angular2/testing';
+  beforeEach } from 'angular2/testing';
 
   describe('shared:TaskTooltipDirective', () => {
     let taskTooltipDirective: TaskTooltipDirective;
 
-    // We reinstantiate the fixture directive before each test
     beforeEach(() => {
       taskTooltipDirective = new TaskTooltipDirective();
     });
 
-    // Specs with assertions
     it('should update a given tooltip upon mouseover', done => {
       let mockTooltip = { innerText: '' };
       taskTooltipDirective.task = <Task>{ name: 'Foo' };
@@ -28,6 +20,7 @@ import {
 
       taskTooltipDirective.onMouseOver();
       expect(mockTooltip.innerText).toBe('Foo');
+
       done();
     });
 
@@ -38,8 +31,10 @@ import {
 
       taskTooltipDirective.onMouseOver();
       expect(mockTooltip.innerText).toBe('Bar');
+
       taskTooltipDirective.onMouseOut();
       expect(mockTooltip.innerText).toBe('Foo');
+
       done();
     });
   });

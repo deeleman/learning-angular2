@@ -5,15 +5,14 @@ import {
   describe,
   expect,
   it,
-  xit,
   inject,
   beforeEach,
-  beforeEachProviders,
-  TestComponentBuilder } from 'angular2/testing';
+  beforeEachProviders } from 'angular2/testing';
 import {
   Router,
   RouteRegistry,
   Location,
+  RouterOutlet,
   ROUTER_PRIMARY_COMPONENT } from 'angular2/router';
 import { SpyLocation } from 'angular2/router/testing';
 import { RootRouter } from 'angular2/src/router/router';
