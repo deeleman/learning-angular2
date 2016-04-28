@@ -1,6 +1,6 @@
 import {
   Directive,
-  ElementRef,
+  ViewContainerRef,
   DynamicComponentLoader,
   Attribute,
   Input } from 'angular2/core';
@@ -19,12 +19,12 @@ export default class RouterOutletDirective extends RouterOutlet {
   @Input() loginUrl: string;
 
   constructor(
-    _elementRef: ElementRef,
+    _viewContainerRef: ViewContainerRef,
     _loader: DynamicComponentLoader,
     _parentRouter: Router,
     @Attribute('name') nameAttr: string) {
 
-    super(_elementRef, _loader, _parentRouter, nameAttr);
+    super(_viewContainerRef, _loader, _parentRouter, nameAttr);
     this.parentRouter = _parentRouter;
   }
 

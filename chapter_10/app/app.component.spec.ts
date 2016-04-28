@@ -11,9 +11,9 @@ import {
 import {
   Router,
   RouteRegistry,
-  Location,
   RouterOutlet,
   ROUTER_PRIMARY_COMPONENT } from 'angular2/router';
+import { Location } from 'angular2/platform/common';
 import { SpyLocation } from 'angular2/router/testing';
 import { RootRouter } from 'angular2/src/router/router';
 
