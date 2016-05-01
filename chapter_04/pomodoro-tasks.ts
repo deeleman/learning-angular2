@@ -72,7 +72,7 @@ class FormattedTimePipe {
   pure: false
 })
 class QueuedOnlyPipe {
-  transform(tasks: Task[], ...args): Task[] {
+  transform(tasks: Task[], ...args: any[]): Task[] {
     return tasks.filter((task: Task) => {
       return task.queued === args[0];
     });
