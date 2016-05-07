@@ -1,5 +1,5 @@
-import { Component } from 'angular2/core';
-import { Title } from 'angular2/platform/browser';
+import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import {
   Router,
   ROUTER_DIRECTIVES,
@@ -7,7 +7,7 @@ import {
   CanActivate,
   OnActivate,
   CanDeactivate,
-OnDeactivate } from 'angular2/router';
+  OnDeactivate } from '@angular/router-deprecated';
 import { Task, TaskService, AuthenticationService } from '../shared/shared';
 
 @Component({

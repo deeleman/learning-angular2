@@ -1,12 +1,12 @@
-import { Component } from 'angular2/core';
+import { Component } from '@angular/core';
 import { SHARED_PROVIDERS, SHARED_DIRECTIVES, AuthenticationService } from './shared/shared';
-import { HTTP_PROVIDERS } from 'angular2/http';
-import { ROUTER_PROVIDERS, RouteConfig, ROUTER_DIRECTIVES, Router } from 'angular2/router';
+import { HTTP_PROVIDERS } from '@angular/http';
+import { ROUTER_PROVIDERS, ROUTER_DIRECTIVES, Router, RouteConfig } from '@angular/router-deprecated';
 import { TimerComponent } from './timer/timer';
 import { TasksComponent, TaskEditorComponent } from './tasks/tasks';
-import { FORM_PROVIDERS } from 'angular2/common';
+import { FORM_PROVIDERS } from '@angular/common';
 import { LoginComponent } from './login/login';
-import { AnimationBuilder } from 'angular2/src/animate/animation_builder';
+import { AnimationBuilder } from '@angular/platform-browser/src/animate/animation_builder';
 
 @Component({
   selector: 'pomodoro-app',

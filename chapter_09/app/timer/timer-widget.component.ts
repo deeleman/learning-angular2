@@ -1,12 +1,13 @@
-import { Component, OnInit, ElementRef } from 'angular2/core';
-import { RouteParams, CanReuse, OnReuse } from 'angular2/router';
+import { Component, OnInit, ElementRef } from '@angular/core';
+import { RouteParams, CanReuse, OnReuse } from '@angular/router-deprecated';
 import { SettingsService, TaskService } from '../shared/shared';
-import { AnimationBuilder } from 'angular2/src/animate/animation_builder';
-import { CssAnimationBuilder } from 'angular2/src/animate/css_animation_builder';
+import { AnimationBuilder } from '@angular/platform-browser/src/animate/animation_builder';
+import { CssAnimationBuilder } from '@angular/platform-browser/src/animate/css_animation_builder';
 
 @Component({
   selector: 'pomodoro-timer-widget',
   styleUrls: ['app/timer/timer-widget.component.css'],
+  providers: [],
   template: `
     <div class="text-center">
       <img src="/app/shared/assets/img/pomodoro.png"
