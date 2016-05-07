@@ -7,7 +7,7 @@
         {{ queuedPomodoros * 25 | pomodoroFormattedTime }})</span>
     </h3>
     <p>
-      <span *ngFor="#queuedTask of tasks | pomodoroQueuedOnly: true ">
+      <span *ngFor="let queuedTask of tasks | pomodoroQueuedOnly: true ">
         <pomodoro-task-icons
           [task]="queuedTask"
           [taskTooltip]="tooltip"
@@ -29,7 +29,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="#task of tasks; #i = index">
+        <tr *ngFor="let task of tasks; let i = index">
           <th scope="row">{{i}}
             <span *ngIf="task.queued" class="label label-info">
               Queued
