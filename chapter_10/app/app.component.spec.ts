@@ -1,21 +1,21 @@
 import AppComponent from './app.component';
 import { LoginComponent } from './login/login';
-import { provide } from 'angular2/core';
+import { provide } from '@angular/core';
 import {
   describe,
   expect,
   it,
   inject,
   beforeEach,
-  beforeEachProviders } from 'angular2/testing';
+  beforeEachProviders } from '@angular/core/testing';
 import {
   Router,
   RouteRegistry,
   RouterOutlet,
-  ROUTER_PRIMARY_COMPONENT } from 'angular2/router';
-import { Location } from 'angular2/platform/common';
-import { SpyLocation } from 'angular2/router/testing';
-import { RootRouter } from 'angular2/src/router/router';
+  ROUTER_PRIMARY_COMPONENT } from '@angular/router-deprecated';
+import { Location } from '@angular/common';
+import { SpyLocation } from '@angular/common/testing';
+import { RootRouter } from '@angular/router-deprecated';
 
 describe('AppComponent', () => {
   let location: Location, router: Router;

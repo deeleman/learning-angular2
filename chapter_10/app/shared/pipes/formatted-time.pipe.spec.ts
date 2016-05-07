@@ -6,7 +6,7 @@ import {
   xit,
   inject,
   beforeEach,
-  beforeEachProviders} from 'angular2/testing';
+  beforeEachProviders} from '@angular/core/testing';
 
 describe('shared:FormattedTimePipe', () => {
   let formattedTimePipe: FormattedTimePipe;

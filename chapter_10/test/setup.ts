@@ -1,10 +1,15 @@
-import { setBaseTestProviders } from 'angular2/testing';
+import { resetBaseTestProviders, setBaseTestProviders } from '@angular/core/testing';
+import { BROWSER_APP_DYNAMIC_PROVIDERS } from "@angular/platform-browser-dynamic";
 import {
-  TEST_BROWSER_PLATFORM_PROVIDERS,
-  TEST_BROWSER_APPLICATION_PROVIDERS
-} from 'angular2/platform/testing/browser';
+  TEST_BROWSER_STATIC_PLATFORM_PROVIDERS,
+  ADDITIONAL_TEST_BROWSER_PROVIDERS
+} from '@angular/platform-browser/testing';
 
+resetBaseTestProviders();
 setBaseTestProviders(
-  TEST_BROWSER_PLATFORM_PROVIDERS,
-  TEST_BROWSER_APPLICATION_PROVIDERS
+  TEST_BROWSER_STATIC_PLATFORM_PROVIDERS,
+  [
+    BROWSER_APP_DYNAMIC_PROVIDERS,
+    ADDITIONAL_TEST_BROWSER_PROVIDERS
+  ]
 );

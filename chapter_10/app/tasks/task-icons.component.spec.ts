@@ -5,14 +5,14 @@ import {
   it,
   inject,
   beforeEach,
-  beforeEachProviders,
-  TestComponentBuilder } from 'angular2/testing';
+  beforeEachProviders } from '@angular/core/testing';
+import { TestComponentBuilder } from '@angular/compiler/testing';
 
 describe('tasks:TaskIconsComponent', () => {
   let testComponentBuilder: TestComponentBuilder;
 
-  // First we setup the injector with providers for our component
-  // and for a fixture component builder
+  // First we setup the injector with a provider
+  // for a fixture component builder
   beforeEachProviders(() => [
     TestComponentBuilder
   ]);

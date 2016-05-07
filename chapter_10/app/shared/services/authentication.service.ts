@@ -1,5 +1,6 @@
-import { Injectable, EventEmitter } from 'angular2/core';
-import { Http, Response, Headers, RequestOptions } from 'angular2/http';
+import { Injectable, EventEmitter } from '@angular/core';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export default class AuthenticationService {

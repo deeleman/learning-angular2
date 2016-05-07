@@ -1,6 +1,6 @@
 import TimerWidgetComponent from './timer-widget.component';
-import { provide } from 'angular2/core';
-import { RouteParams } from 'angular2/router';
+import { provide } from '@angular/core';
+import { RouteParams } from '@angular/router-deprecated';
 import { SettingsService, TaskService } from '../shared/shared';
 import {
   describe,
@@ -11,10 +11,10 @@ import {
   injectAsync,
   beforeEach,
   beforeEachProviders,
-  TestComponentBuilder,
-  setBaseTestProviders } from 'angular2/testing';
-import { Http, BaseRequestOptions }  from 'angular2/http';
-import { MockBackend } from 'angular2/http/testing';
+  setBaseTestProviders } from '@angular/core/testing';
+import { TestComponentBuilder } from '@angular/compiler/testing';
+import { Http, BaseRequestOptions }  from '@angular/http';
+import { MockBackend } from '@angular/http/testing';
 import 'rxjs/add/operator/map';
 
 describe('timer:TimerWidgetComponent', () => {

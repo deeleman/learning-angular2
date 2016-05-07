@@ -4,7 +4,7 @@ import {
   describe,
   expect,
   it,
-  beforeEach } from 'angular2/testing';
+  beforeEach } from '@angular/core/testing';
 
   describe('shared:TaskTooltipDirective', () => {
     let taskTooltipDirective: TaskTooltipDirective;

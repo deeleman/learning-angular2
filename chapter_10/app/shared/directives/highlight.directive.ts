@@ -1,6 +1,6 @@
-import { Directive, ElementRef } from 'angular2/core';
-import { AnimationBuilder } from 'angular2/src/animate/animation_builder';
-import { CssAnimationBuilder } from 'angular2/src/animate/css_animation_builder';
+import { Directive, ElementRef } from '@angular/core';
+import { AnimationBuilder } from '@angular/platform-browser/src/animate/animation_builder';
+import { CssAnimationBuilder } from '@angular/platform-browser/src/animate/css_animation_builder';
 
 @Directive({
   selector: '.pomodoro-highlight',

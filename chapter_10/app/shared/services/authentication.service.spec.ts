@@ -1,18 +1,18 @@
 import AuthenticationService from './authentication.service';
-import { provide } from 'angular2/core';
+import { provide } from '@angular/core';
 import {
   describe,
   expect,
   it,
   inject,
   beforeEach,
-  beforeEachProviders } from 'angular2/testing';
+  beforeEachProviders } from '@angular/core/testing';
 import {
   Http,
   BaseRequestOptions,
   Response,
-  ResponseOptions }  from 'angular2/http';
-import { MockBackend, MockConnection } from 'angular2/http/testing';
+  ResponseOptions }  from '@angular/http';
+import { MockBackend, MockConnection } from '@angular/http/testing';
 import 'rxjs/add/operator/map';
 
 describe('shared:AuthenticationService', () => {

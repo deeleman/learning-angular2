@@ -5,7 +5,7 @@ import {
   it,
   inject,
   beforeEach,
-  beforeEachProviders } from 'angular2/testing';
+  beforeEachProviders } from '@angular/core/testing';
 
 describe('shared:AuthenticationService', () => {
   let authenticationService: AuthenticationService;
