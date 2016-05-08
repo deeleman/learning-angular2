@@ -1,10 +1,12 @@
-import { Injectable, EventEmitter } from 'angular2/core';
+import { Injectable, EventEmitter } from '@angular/core';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export default class AuthenticationService {
   userIsloggedIn: EventEmitter<boolean>;
 
-  constructor() {
+  constructor(public http: Http) {
     this.userIsloggedIn = new EventEmitter();
   }
 
@@ -15,6 +17,7 @@ export default class AuthenticationService {
       // @NOTE: In a normal case scenario this check should
       // be performed against a web service, which would return
       // the session token upon validating the user successfully
+      // Please refer to {@link httpLogin()}.
       if (username === 'john.doe@mail.com' &&
         password === 'letmein') {
         validCredentials = true;
@@ -23,6 +26,32 @@ export default class AuthenticationService {
 
       this.userIsloggedIn.emit(validCredentials);
       resolve(validCredentials);
+    });
+  }
+
+  httpLogin(credentials): Promise<boolean> {
+    return new Promise(resolve => {
+
+      const url = '/api/authentication'; // Or your own API Auth url
+      const body = JSON.stringify(credentials);
+      const headers = new Headers({ 'Content-Type': 'application/json' });
+      const options = new RequestOptions({ headers: headers });
+
+      this.http.post(url, body, options)
+        .map(response => response.json())
+        .subscribe(authResponse => {
+            let validCredentials: boolean = false;
+
+            if(authResponse && authResponse.token) {
+              validCredentials = true;
+              window.sessionStorage.setItem('token', authResponse.token);
+            }
+
+            this.userIsloggedIn.emit(validCredentials);
+            resolve(validCredentials);
+          },
+          error => console.log(error)
+        );
     });
   }
 

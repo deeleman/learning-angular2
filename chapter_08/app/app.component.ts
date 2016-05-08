@@ -1,10 +1,10 @@
-import { Component } from 'angular2/core';
+import { Component } from '@angular/core';
 import { SHARED_PROVIDERS, SHARED_DIRECTIVES, AuthenticationService } from './shared/shared';
-import { HTTP_PROVIDERS } from 'angular2/http';
-import { ROUTER_PROVIDERS, RouteConfig, ROUTER_DIRECTIVES, Router } from 'angular2/router';
+import { HTTP_PROVIDERS } from '@angular/http';
+import { ROUTER_PROVIDERS, ROUTER_DIRECTIVES, Router, RouteConfig } from '@angular/router-deprecated';
 import { TimerComponent } from './timer/timer';
 import { TasksComponent, TaskEditorComponent } from './tasks/tasks';
-import { FORM_PROVIDERS } from 'angular2/common';
+import { FORM_PROVIDERS } from '@angular/common';
 import { LoginComponent } from './login/login';
 
 @Component({
@@ -14,7 +14,8 @@ import { LoginComponent } from './login/login';
     SHARED_PROVIDERS,
     HTTP_PROVIDERS,
     ROUTER_PROVIDERS,
-    FORM_PROVIDERS],
+    FORM_PROVIDERS
+  ],
   styles: [`
       .router-link-active {
           font-weight: bold;
@@ -36,8 +37,8 @@ export default class AppComponent {
   constructor(
     private authenticationService: AuthenticationService,
     private router: Router) {
-    authenticationService.userIsloggedIn.subscribe(isLoggedIn => {
-      this.userIsLoggedIn = isLoggedIn;
+    authenticationService.userIsloggedIn.subscribe(userIsloggedIn => {
+      this.userIsLoggedIn = userIsloggedIn;
     });
   }
 

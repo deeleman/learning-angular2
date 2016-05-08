@@ -1,17 +1,18 @@
-import { Component, OnInit } from 'angular2/core';
+import { Component, OnInit } from '@angular/core';
 import TaskIconsComponent from './task-icons.component';
 import TaskTooltipDirective from './task-tooltip.directive';
 import {
   TaskService,
   SettingsService,
   Task,
-  SHARED_PIPES
+  SHARED_PIPES,
+  SHARED_DIRECTIVES
 } from '../shared/shared';
-import { Router } from 'angular2/router';
+import { Router } from '@angular/router-deprecated';
 
 @Component({
   selector: 'pomodoro-tasks',
-  directives: [TaskIconsComponent, TaskTooltipDirective],
+  directives: [TaskIconsComponent, TaskTooltipDirective, SHARED_DIRECTIVES],
   pipes: [SHARED_PIPES],
   styleUrls: ['app/tasks/tasks.component.css'],
   templateUrl: 'app/tasks/tasks.component.html'

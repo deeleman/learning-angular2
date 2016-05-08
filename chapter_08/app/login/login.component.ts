@@ -1,6 +1,6 @@
-import { Component } from 'angular2/core';
-import { FormBuilder, ControlGroup, Validators, Control } from 'angular2/common';
-import { Router } from 'angular2/router';
+import { Component } from '@angular/core';
+import { FormBuilder, ControlGroup, Validators, Control } from '@angular/common';
+import { Router } from '@angular/router-deprecated';
 import { AuthenticationService } from '../shared/shared';
 
 @Component({

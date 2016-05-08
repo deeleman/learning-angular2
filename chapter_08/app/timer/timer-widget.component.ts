@@ -1,5 +1,5 @@
-import { Component, OnInit } from 'angular2/core';
-import { RouteParams, CanReuse, OnReuse } from 'angular2/router';
+import { Component, OnInit, ElementRef } from '@angular/core';
+import { RouteParams, CanReuse, OnReuse } from '@angular/router-deprecated';
 import { SettingsService, TaskService } from '../shared/shared';
 
 @Component({

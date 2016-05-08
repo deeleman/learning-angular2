@@ -3,11 +3,11 @@ import {
   ViewContainerRef,
   DynamicComponentLoader,
   Attribute,
-  Input } from 'angular2/core';
+  Input } from '@angular/core';
 import {
   Router,
   RouterOutlet,
-  ComponentInstruction } from 'angular2/router';
+  ComponentInstruction } from '@angular/router-deprecated';
 import { AuthenticationService } from '../shared';
 
 @Directive({

@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from 'angular2/core';
+import { Pipe, PipeTransform } from '@angular/core';
 import { Queueable } from '../shared';
 
 @Pipe({
@@ -8,7 +8,7 @@ import { Queueable } from '../shared';
 export default class QueuedOnlyPipe implements PipeTransform {
   transform(queueableItems: Queueable[], ...args: any[]): Queueable[] {
     return queueableItems.filter((queueableItem: Queueable) => {
-      return queueableItem.queued === args[0]
+      return queueableItem.queued === args[0];
     });
   }
 }
