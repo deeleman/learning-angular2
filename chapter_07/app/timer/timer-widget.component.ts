@@ -1,6 +1,6 @@
-import { Component, OnInit } from 'angular2/core';
+import { Component, OnInit } from '@angular/core';
 import { SettingsService, TaskService } from '../shared/shared';
-import { RouteParams, CanReuse, OnReuse } from 'angular2/router';
+import { RouteParams, CanReuse, OnReuse } from '@angular/router-deprecated';
 
 @Component({
   selector: 'pomodoro-timer-widget',

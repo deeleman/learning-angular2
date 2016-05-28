@@ -1,7 +1,7 @@
-import { Component } from 'angular2/core';
+import { Component } from '@angular/core';
 import { SHARED_PROVIDERS } from './shared/shared';
-import { HTTP_PROVIDERS } from 'angular2/http';
-import { ROUTER_PROVIDERS, RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router';
+import { HTTP_PROVIDERS } from '@angular/http';
+import { ROUTER_PROVIDERS, RouteConfig, ROUTER_DIRECTIVES } from '@angular/router-deprecated';
 import { TimerComponent } from './timer/timer';
 import { TasksComponent, TaskEditorComponent } from './tasks/tasks';
 

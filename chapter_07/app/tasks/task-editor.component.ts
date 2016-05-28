@@ -1,12 +1,12 @@
-import { Component } from 'angular2/core';
+import { Component } from '@angular/core';
 import {
   ROUTER_DIRECTIVES,
   CanActivate,
   ComponentInstruction,
   OnActivate,
   CanDeactivate,
-  OnDeactivate } from 'angular2/router';
-import { Title } from 'angular2/platform/browser';
+  OnDeactivate } from '@angular/router-deprecated';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'pomodoro-tasks-editor',
