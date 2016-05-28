@@ -1,7 +1,9 @@
-# Angular 2 Essentials
+# Learning Angular 2
+**Please note:** *Angular 2 Essentials* has been renamed to *Learning Angular 2*. The book covers up to Angular 2 Release Candidate 1. We are in the process of updating the code examples in this repository.
+
 Welcome to the GIT repository for the code samples included in the book. The code samples included in this repository belong to a book still under development and therefore are subject to change without prior notice. The author will provide these examples "AS IS" while the book production remains in progress.
 
-<a href="https://www.packtpub.com/web-development/angular-2-essentials" target="_blank" style="display: block; text-align: center;">				![b05075_mockupcover_normal_1](https://cloud.githubusercontent.com/assets/1104146/12381718/f902dd24-bd8f-11e5-9ec7-6b43f837ae71.png)
+<a href="https://www.packtpub.com/web-development/learning-angular-2" target="_blank" style="display: block; text-align: center;">				![img2074](https://cloud.githubusercontent.com/assets/1104146/15630021/39127e22-252a-11e6-812a-eee788c6ba02.png)
 </a>
 
 ## About this book
@@ -18,16 +20,16 @@ This book is targeted at web developers who want to build the next generation of
 
 At this time these are the code samples published so far:
 
-* [Chapter 1 - Creating our first component in Angular 2](https://github.com/deeleman/angular2-essentials/tree/master/chapter_01)
-* [Chapter 2 - Introducing TypeScript](https://github.com/deeleman/angular2-essentials/tree/master/chapter_02)
-* [Chapter 3 - Implementing properties and events in our Components](https://github.com/deeleman/angular2-essentials/tree/master/chapter_03)
-* [Chapter 4 - Enhancing our components with Pipes and Directives](https://github.com/deeleman/angular2-essentials/tree/master/chapter_04)
-* [Chapter 5 - Building an application with Angular 2 components](https://github.com/deeleman/angular2-essentials/tree/master/chapter_05)
-* [Chapter 6 - Asynchronous data services with Angular 2](https://github.com/deeleman/angular2-essentials/tree/master/chapter_06)
-* [Chapter 7 - Routing in Angular 2](https://github.com/deeleman/angular2-essentials/tree/master/chapter_07)
-* [Chapter 8 - Forms and Authentication handling in Angular 2](https://github.com/deeleman/angular2-essentials/tree/master/chapter_08)
-* [Chapter 9 - Animating components with Angular 2](https://github.com/deeleman/angular2-essentials/tree/master/chapter_09)
-* [Chapter 10 - Unit Testing Angular 2 applications](https://github.com/deeleman/angular2-essentials/tree/master/chapter_10)
+* [Chapter 1 - Creating our first component in Angular 2](https://github.com/deeleman/learning-angular2/tree/master/chapter_01)
+* [Chapter 2 - Introducing TypeScript](https://github.com/deeleman/learning-angular2/tree/master/chapter_02)
+* [Chapter 3 - Implementing properties and events in our Components](https://github.com/deeleman/learning-angular2/tree/master/chapter_03)
+* [Chapter 4 - Enhancing our components with Pipes and Directives](https://github.com/deeleman/learning-angular2/tree/master/chapter_04)
+* [Chapter 5 - Building an application with Angular 2 components](https://github.com/deeleman/learning-angular2/tree/master/chapter_05)
+* [Chapter 6 - Asynchronous data services with Angular 2](https://github.com/deeleman/learning-angular2/tree/master/chapter_06)
+* [Chapter 7 - Routing in Angular 2](https://github.com/deeleman/learning-angular2/tree/master/chapter_07)
+* [Chapter 8 - Forms and Authentication handling in Angular 2](https://github.com/deeleman/learning-angular2/tree/master/chapter_08)
+* [Chapter 9 - Animating components with Angular 2](https://github.com/deeleman/learning-angular2/tree/master/chapter_09)
+* [Chapter 10 - Unit Testing Angular 2 applications](https://github.com/deeleman/learning-angular2/tree/master/chapter_10)
 
 ### What do you need to run the examples?
 
@@ -39,7 +41,7 @@ You will want to have a local web server pointing to the example folder you want
 
 While the Angular 2 project keeps moving forward and has not a stable version, breaking changes in the codebase may affect the reliability of the code examples provided.
 
-The author will do its best to keep the code samples provided as up-to-date as possible, but we understand that you may encounter outdated snippets or missing scripts. Please post your enquiries in the [issues page](https://github.com/deeleman/angular2-essentials/issues) should you require further assistance.
+The author will do its best to keep the code samples provided as up-to-date as possible, but we understand that you may encounter outdated snippets or missing scripts. Please post your enquiries in the [issues page](https://github.com/deeleman/learning-angular2/issues) should you require further assistance.
 
 ## About the author
 
