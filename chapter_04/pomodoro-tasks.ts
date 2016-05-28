@@ -3,10 +3,11 @@ import {
   Input,
   Pipe,
   Directive,
+  PipeTransform,
   OnInit,
   HostListener
-} from 'angular2/core';
-import { bootstrap } from 'angular2/platform/browser';
+} from '@angular/core';
+import { bootstrap } from '@angular/platform-browser-dynamic';
 
 /// Model interface
 
@@ -59,7 +60,7 @@ class TaskService {
 @Pipe({
   name: 'pomodoroFormattedTime'
 })
-class FormattedTimePipe {
+class FormattedTimePipe implements PipeTransform {
   transform(totalMinutes: number): string {
     let minutes: number = totalMinutes % 60;
     let hours: number = Math.floor(totalMinutes / 60);
@@ -71,7 +72,7 @@ class FormattedTimePipe {
   name: 'pomodoroQueuedOnly',
   pure: false
 })
-class QueuedOnlyPipe {
+class QueuedOnlyPipe implements PipeTransform {
   transform(tasks: Task[], ...args: any[]): Task[] {
     return tasks.filter((task: Task) => {
       return task.queued === args[0];

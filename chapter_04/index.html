@@ -3,21 +3,16 @@
   <head>
     <meta charset="utf-8">
     <title>My Angular 2 Pomodoro Tasks</title>
+    <script src="node_modules/es6-shim/es6-shim.min.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
     <script src="node_modules/systemjs/dist/system.js"></script>
     <script src="node_modules/rxjs/bundles/Rx.js"></script>
-    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
-    <script src="node_modules/angular2/bundles/angular2.js"></script>
+
+    <script src="systemjs.config.js"></script>
     <script>
-      System.config({
-        packages: {
-          built: {
-            format: 'register',
-            defaultExtension: 'js'
-          }
-        }
-      });
       System.import ('built/pomodoro-tasks')
-            .then(null, console.error.bind(console));
+        .then(null, console.error.bind(console));
     </script>
 
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
