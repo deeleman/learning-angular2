@@ -1,7 +1,7 @@
 # Learning Angular 2
-**Please note:** *Angular 2 Essentials* has been renamed to *Learning Angular 2*. The book covers up to Angular 2 Release Candidate 1. We are in the process of updating the code examples in this repository.
+**Please note:** *Angular 2 Essentials* has been renamed to *Learning Angular 2*. The book covers up to Angular 2 Release Candidate 1. **All code examples have been fully updated to Angular 2 RC.1**.
 
-Welcome to the GIT repository for the code samples included in the book. The code samples included in this repository belong to a book still under development and therefore are subject to change without prior notice. The author will provide these examples "AS IS" while the book production remains in progress.
+Welcome to the GIT repository for the code samples included in the book. The code samples included in this repository are subject to change without prior notice in order to keep up to date with the latest version of Angular 2.
 
 <a href="https://www.packtpub.com/web-development/learning-angular-2" target="_blank" style="display: block; text-align: center;">				![img2074](https://cloud.githubusercontent.com/assets/1104146/15630021/39127e22-252a-11e6-812a-eee788c6ba02.png)
 </a>
@@ -39,7 +39,7 @@ You will want to have a local web server pointing to the example folder you want
 
 ### Disclaimer
 
-While the Angular 2 project keeps moving forward and has not a stable version, breaking changes in the codebase may affect the reliability of the code examples provided.
+While the Angular 2 project keeps moving forward and has not reached a final version, breaking changes in the codebase may affect the reliability of the code examples provided.
 
 The author will do its best to keep the code samples provided as up-to-date as possible, but we understand that you may encounter outdated snippets or missing scripts. Please post your enquiries in the [issues page](https://github.com/deeleman/learning-angular2/issues) should you require further assistance.
 

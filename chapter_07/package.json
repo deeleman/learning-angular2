@@ -7,7 +7,7 @@
   "author": "Pablo Deeleman",
   "repository": {
     "type": "git",
-    "url": "git://github.com/deeleman/angular2-essentials.git"
+    "url": "git://github.com/deeleman/learning-angular2.git"
   },
   "license": "ISC",
   "scripts": {

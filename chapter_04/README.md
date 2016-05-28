@@ -1,24 +1,19 @@
 # Chapter 4
 ## Powering up our component with Pipes and Directives
 
-**Warning:** Our *Angular 2 Essentials* book, encompassing the code examples available here, is still in Alpha state and therefore the samples provided herein may be subject to change without prior notice.
+In this chapter we will take a comprehensive overview on how we can enrich the output of our custom Angular 2 components by means of pipes and custom directives.
 
 ## Installation
 
 Clone the repository, move to the folder containing the source file for this chapter and install the NPM dependencies by executing the following:
 
 ```bash
-$ git clone https://github.com/deeleman/angular2-essentials.git
-$ cd angular2-essentials/chapter_04
+$ git clone https://github.com/deeleman/learning-angular2.git
+$ cd learning-angular2/chapter_04
 $ npm install
 ```
 
 An `npm postinstall` hook will manage the installation of the typings required for compiling the project. You can run `npm start` once finished to trigger the TypeScript transpiling and fire a local server in your machine already pointing to the chapter folder.
-
-## Description
-
-We will take a comprehensive overview on how we can enrich the output of our custom Angular 2 components by means of pipes and custom directives.
-
 
 ### Topics covered
 
