@@ -1,4 +1,4 @@
-import { Component } from 'angular2/core';
+import { Component } from '@angular/core';
 import { TIMER_DIRECTIVES } from './timer/timer';
 import { TASKS_DIRECTIVES } from './tasks/tasks';
 import { SHARED_PROVIDERS } from './shared/shared';
