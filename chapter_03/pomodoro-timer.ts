@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Input, Output, ViewEncapsulation } from 'angular2/core';
-import { bootstrap } from 'angular2/platform/browser';
+import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
+import { bootstrap } from '@angular/platform-browser-dynamic';
 
 @Component({
   selector: 'countdown',
