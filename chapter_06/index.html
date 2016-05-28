@@ -3,21 +3,14 @@
   <head>
     <meta charset="utf-8">
     <title>My Angular 2 Pomodoro Application</title>
-
+    <script src="node_modules/es6-shim/es6-shim.min.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
     <script src="node_modules/systemjs/dist/system.js"></script>
     <script src="node_modules/rxjs/bundles/Rx.js"></script>
-    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
-    <script src="node_modules/angular2/bundles/angular2.js"></script>
-    <script src="node_modules/angular2/bundles/http.js"></script>
+
+    <script src="systemjs.config.js"></script>
     <script>
-      System.config({
-        packages: {
-          built: {
-            format: 'register',
-            defaultExtension: 'js'
-          }
-        }
-      });
       System.import ('built/app/main')
         .then(null, console.error.bind(console));
     </script>
