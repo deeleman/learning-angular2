@@ -1,5 +1,5 @@
 # Learning Angular 2
-**Please note:** *Angular 2 Essentials* has been renamed to *Learning Angular 2*. The book covers up to Angular 2 Release Candidate 1. **All code examples have been fully updated to Angular 2 RC.1**.
+**Please note:** The book covers up to Angular 2 Release Candidate 1. **A full upgrade to RC.2 and an UPDATES page with notes and corrections over the book contents will be released by the end of June. Stay on tune!**.
 
 Welcome to the GIT repository for the code samples included in the book. The code samples included in this repository are subject to change without prior notice in order to keep up to date with the latest version of Angular 2.
 
