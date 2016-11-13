@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { bootstrap } from '@angular/platform-browser-dynamic';
 
 @Component({
-  selector: 'pomodoro-timer',
+  selector: 'my-app',
   template: `
     <div class="text-center">
-      <img src="assets/img/pomodoro.png" alt="Pomodoro">
+      <img src="./assets/img/pomodoro.png" alt="Pomodoro">
       <h1> {{ minutes }}:{{ seconds | number: '2.0' }} </h1>
       <p>
         <button (click)="togglePause()"
@@ -16,7 +15,7 @@ import { bootstrap } from '@angular/platform-browser-dynamic';
     </div>
 `
 })
-class PomodoroTimerComponent {
+export class AppComponent {
   minutes: number;
   seconds: number;
   isPaused: boolean;
@@ -54,5 +53,3 @@ class PomodoroTimerComponent {
     }
   }
 }
-
-bootstrap(PomodoroTimerComponent);
