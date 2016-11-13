@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule  } from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
+import { PomodoroTimerComponent } from './pomodoro-timer.component';
 
 @NgModule({
   imports: [BrowserModule],
-  declarations: [AppComponent],
-  bootstrap: [AppComponent],
+  declarations: [PomodoroTimerComponent],
+  bootstrap: [PomodoroTimerComponent],
 })
 export class AppModule { }

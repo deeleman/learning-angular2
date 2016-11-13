@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'my-app',
+  selector: 'pomodoro-timer',
   template: `
     <div class="text-center">
       <img src="./assets/img/pomodoro.png" alt="Pomodoro">
@@ -15,7 +15,7 @@ import { Component } from '@angular/core';
     </div>
 `
 })
-export class AppComponent {
+export class PomodoroTimerComponent {
   minutes: number;
   seconds: number;
   isPaused: boolean;
