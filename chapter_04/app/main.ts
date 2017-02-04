@@ -1,16 +1,17 @@
 import {
-  Component,
-  Input,
-  Pipe,
-  Directive,
+  Component, Pipe, Directive,
+  NgModule,
+  Input, Output,
+  ViewEncapsulation,
+  EventEmitter,
   PipeTransform,
   OnInit,
   HostListener
 } from '@angular/core';
-import { bootstrap } from '@angular/platform-browser-dynamic';
+import { BrowserModule } from '@angular/platform-browser';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 /// Model interface
-
 interface Task {
   name: string;
   deadline: Date;
@@ -19,7 +20,6 @@ interface Task {
 }
 
 /// Local Data Service
-
 class TaskService {
   public taskStore: Task[] = [];
 
@@ -55,8 +55,8 @@ class TaskService {
   }
 }
 
-/// Custom Pipes
 
+/// Custom Pipes
 @Pipe({
   name: 'pomodoroFormattedTime'
 })
@@ -81,7 +81,6 @@ class QueuedOnlyPipe implements PipeTransform {
 }
 
 /// Custom Directives
-
 @Directive({
   selector: '[task]'
 })
@@ -108,7 +107,6 @@ class TaskTooltipDirective {
 /// Component classes
 
 /// - Child Icon Component
-
 @Component({
   selector: 'pomodoro-task-icons',
   template: `<img *ngFor="let icon of icons"
@@ -127,13 +125,10 @@ class TaskIconsComponent implements OnInit {
 }
 
 /// - Main Parent Component
-
 @Component({
   selector: 'pomodoro-tasks',
-  directives: [TaskIconsComponent, TaskTooltipDirective],
-  pipes: [FormattedTimePipe, QueuedOnlyPipe],
-  styleUrls: ['pomodoro-tasks.css'],
-  templateUrl: 'pomodoro-tasks.html'
+  styleUrls: ['/app/pomodoro-tasks.css'],
+  templateUrl: '/app/pomodoro-tasks.html'
 })
 class TasksComponent {
   today: Date;
@@ -166,4 +161,22 @@ class TasksComponent {
   }
 };
 
-bootstrap(TasksComponent);
+// Main module, bootstrapping PomodoroTimerComponent as root component
+// and delcaring all required pipes and directives in our templates,
+// plus passing the TaskService token to our injector
+@NgModule({
+  imports: [BrowserModule],
+  providers: [TaskService],
+  declarations: [
+    TaskIconsComponent,
+    TaskTooltipDirective,
+    FormattedTimePipe,
+    QueuedOnlyPipe,
+    TasksComponent],
+  bootstrap: [TasksComponent],
+})
+export class AppModule { }
+
+// Application bootstrap (specific for browser environments)
+const platform = platformBrowserDynamic();
+platform.bootstrapModule(AppModule);
