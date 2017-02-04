@@ -1,0 +1,6 @@
+## Compiled JavaSCript and maps 
+*.js
+*.js.map
+
+## Exclusion for SystemJS config file
+!systemjs.config.js

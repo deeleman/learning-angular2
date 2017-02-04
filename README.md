@@ -1,14 +1,15 @@
-# Learning Angular 2
-**Please note:** The book covers up to Angular 2 Release Candidate 1. **A full upgrade to RC.2 and an UPDATES page with notes and corrections over the book contents will be released by the end of June. Stay on tune!**.
+# Learning Angular 2 (OUTDATED)
+## A new edition of this book covering the most recent version of Angular (v.4.x) will be released along 2017
+**Please note:** The book covers up to Angular 2 Release Candidate 1 amd hence is outdated. **All code examples are kept here as a permanent archive**.
 
-Welcome to the GIT repository for the code samples included in the book. The code samples included in this repository are subject to change without prior notice in order to keep up to date with the latest version of Angular 2.
+Welcome to the GIT repository for the code samples included in the book. The code samples included in this repository are subject to change without prior notice.
 
 <a href="https://www.packtpub.com/web-development/learning-angular-2" target="_blank" style="display: block; text-align: center;">				![img2074](https://cloud.githubusercontent.com/assets/1104146/15630021/39127e22-252a-11e6-812a-eee788c6ba02.png)
 </a>
 
 ## About this book
 
-The most ambitious overview of Angular 2 on the market up to now—this guide gathers together everything there is to know about Angular 2 and groups it in intuitive sections. No hunting through confusing documentation or scrambling piecemeal to figure out how things work together; this book is your detailed map of every feature and its use cases.
+This guide gathers together everything there is to know about **Angular 2 up to RC1 version** and groups it in intuitive sections. No hunting through confusing documentation or scrambling piecemeal to figure out how things work together; this book is your detailed map of every feature and its use cases.
 
 The author has done all the hard work of fitting everything Angular 2 means for developers together for you, making this book the quickest way to learn Angular 2 from scratch. This is an inexpensive, yet invaluable addition to every Angular user's toolkit to refer back to time and again. It's great for newcomers to Angular who will learn best through clear explanations and definitions of concepts.
 

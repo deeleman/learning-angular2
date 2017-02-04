@@ -1,7 +1,7 @@
 # Chapter 1
 ## Creating our first component in Angular 2
 
-We kickstart our journey into Angular by building our very first component, which is the bread and butter of all Angular 2 applications. Angular 2 components conform the bricks of all web applications and by the end of this chapter we will have a fully functional web widget harnessing the power of Angular.
+We kickstart our journey into Angular by building our very first component and NG module, which is the bread and butter of all Angular 2 applications. Angular 2 components conform the bricks of all web applications and by the end of this chapter we will have a fully functional web widget harnessing the power of Angular.
 
 ## Installation
 
@@ -13,7 +13,7 @@ $ cd learning-angular2/chapter_01
 $ npm install
 ```
 
-An `npm postinstall` hook will manage the installation of the typings required for compiling the project. You can run `npm start` once finished to trigger the TypeScript transpiling and spawn a local server in your machine already pointing to the chapter folder.
+You can run `npm start` once the installation is finished in order to trigger the TypeScript transpiling and spawn a local server in your machine already pointing to the chapter folder.
 
 ## Topics covered
 
