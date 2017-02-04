@@ -1,5 +1,4 @@
-import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
-import { bootstrap } from '@angular/platform-browser-dynamic';
+import { Component, Input, Output, ViewEncapsulation, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'countdown',
@@ -7,7 +6,7 @@ import { bootstrap } from '@angular/platform-browser-dynamic';
   styles: ['h1 { color: #900 }'],
   encapsulation: ViewEncapsulation.Emulated
 })
-class CountdownComponent {
+export class CountdownComponent {
   @Input() seconds: number;
   intervalId: number;
   @Output() complete: EventEmitter<any> = new EventEmitter();
@@ -25,16 +24,3 @@ class CountdownComponent {
     this.progress.emit(this.seconds);
   }
 }
-
-@Component({
-  selector: 'pomodoro-timer',
-  directives: [CountdownComponent],
-  templateUrl: './pomodoro-timer.html'
-})
-class PomodoroTimerComponent {
-  onCountdownCompleted(): void {
-    alert('Time up!');
-  }
-}
-
-bootstrap(PomodoroTimerComponent);
