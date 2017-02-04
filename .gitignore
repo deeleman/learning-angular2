@@ -1,5 +1,6 @@
 ## Compiled JavaScript
 built
+app/*.js
 
 ## TypeScript
 typings
